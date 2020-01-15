@@ -4,10 +4,10 @@ name: mok 개발일지
 description: msc9533
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: http://msc9533.github.io
+url: https://msc9533.github.io
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: ""
+baseurl: "msc9533/msc9533.github.io"
 
 author: seung-chan mok
 copyright: 2020
