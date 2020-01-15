@@ -1,3 +1,12 @@
+---
+layout: post
+title: "test"
+date: 2020-01-15 13:16:00
+description: test post
+tags: 
+
+---
+
 # test post
 
 테스트 post 입니다.
