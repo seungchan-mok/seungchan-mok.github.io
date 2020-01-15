@@ -7,7 +7,7 @@ description: msc9533
 url: https://msc9533.github.io
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: ''
+baseurl: 'msc9533.github.io'
   #"msc9533/msc9533.github.io"
 
 author: seung-chan mok
