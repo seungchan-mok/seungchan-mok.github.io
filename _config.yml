@@ -8,7 +8,7 @@ url: http://msc9533.github.io
 #url: http://localhost:4000
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: '/jekyll-clean-dark'
+baseurl: ""
 
 author: seung-chan mok
 copyright: 2020
@@ -54,3 +54,4 @@ kramdown:
   hard_wrap: true
 
 exclude: ['README.md', 'LICENSE']
+remote_theme : streetturtle/jekyll-clean-dark
