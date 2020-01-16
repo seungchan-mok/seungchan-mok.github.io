@@ -31,7 +31,11 @@
       <a title="{{ site.social.lastfm }} on Last.fm" href="https://www.lastfm.com/user/{{ site.social.lastfm }}" target="_blank"><i class="fab fa-lastfm fa-2x"></i></a>
     </li>
   {% endif %}
-
+  {% if site.social.facebook %}
+    <li>
+      <a title="{{ site.social.facebook }} on Last.fm" href="https://www.facebook.com/{{ site.social.lastfm }}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+    </li>
+  {% endif %}
   {% if site.social.rss %}
     <li>
       <a title="{{ site.social.rss }} RSS" href="{{ site.social.rss | relative_url }}" target="_blank"><i class="fas fa-rss fa-2x"></i></a>
