@@ -16,8 +16,16 @@
 
 - ubuntu,ros 기본 명령어
 - cmake list의 구조
+- vscode ros setting
 
 ### SLAM
 
+- 좌표변환
+
 ### Deep Learning
 
+- 서버구축하기
+
+### ETC
+
+- vscode setting
