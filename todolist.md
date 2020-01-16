@@ -11,3 +11,13 @@
 
 - jekyll로 github 블로그 만들기
 - disqus댓글 enable하기
+
+### ROS
+
+- ubuntu,ros 기본 명령어
+- cmake list의 구조
+
+### SLAM
+
+### Deep Learning
+
