@@ -4,5 +4,9 @@ title: About
 
 ---
 
-# Some info 
-...about how cool you are ;)
+# msc9533
+
+## Seung-Chan Mok
+
+E-mail : msc9533@gmail.com
+
