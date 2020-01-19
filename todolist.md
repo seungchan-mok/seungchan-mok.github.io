@@ -5,13 +5,12 @@
 - 카테고리별로 나누기
 - profile 작성하기
 - 구글 검색 노출시키기
-- 댓글 분리시키기 [***](https://help.disqus.com/en/articles/1717137-use-configuration-variables-to-avoid-split-threads-and-missing-comments)
 
 ## post
 
 ### jekyll
 
-- jekyll로 github 블로그 만들기
+- jekyll로 github 블로그 만들기 - 쓰는중
 - disqus댓글 enable하기
 
 ### ROS
