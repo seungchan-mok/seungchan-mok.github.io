@@ -24,9 +24,17 @@ Repository의 이름을 `블로그이름`.github.io로 생성을 해줍니다. �
 
 ![](/../image/blogurl.png)
 
+repository를 생성한 후 로컬 저장소에서 clone을 진행 해 줍니다.
+
 ## Jekyll 테마 적용하기
 
 ### Jekyll이란?
+
+markdown, HTML 등의 언어로 작성된 글을 정적 웹사이트로 변환해 업로드 할 수 있게 해주는 사이트 개발 툴이다. 정적페이지기 때문에 속도가 빠르고 github에 업로드 하는 경우 Jekyll과 Ruby를 굳이 설치 하지 않아도 됩니다.
+
+### 테마 적용
+
+먼저 이 [페이지](http://jekyllthemes.org/)에서 마음에 드는 테마를 선택합니다. 저는 jekyll-clean-dark라는 이름의 테마로 선택 했습니다.
 
 ---
 참고문서
