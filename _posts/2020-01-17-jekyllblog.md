@@ -36,6 +36,8 @@ markdown, HTML 등의 언어로 작성된 글을 정적 웹사이트로 변환�
 
 먼저 이 [페이지](http://jekyllthemes.org/)에서 마음에 드는 테마를 선택합니다. 저는 jekyll-clean-dark라는 이름의 테마로 선택 했습니다.
 
+
+
 ---
 참고문서
 - [Jekyll을 이용해 GitHub에 블로그 만들기 (1)](https://jetalog.net/86)
