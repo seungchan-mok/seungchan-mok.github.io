@@ -112,8 +112,12 @@ exclude: ['README.md', 'LICENSE']
 수정이 완료 되었다면 여기까지의 내용을 push 하고 자신의 블로그주소로 이동해 적용된 테마를 확인합니다.
 
 ---
-참고문서
+<details>
+<summary>참고문서</summary>
+<div markdown="1">
 - [Jekyll을 이용해 GitHub에 블로그 만들기 (1)](https://jetalog.net/86)
 - [Jekyll을 이용하여 Github Blog 만들기](http://jinyongjeong.github.io/2017/01/08/jekyll_blog_making_new/)
 - [Jekyll Clean Dark](https://github.com/streetturtle/jekyll-clean-dark)
+</div>
+</details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>

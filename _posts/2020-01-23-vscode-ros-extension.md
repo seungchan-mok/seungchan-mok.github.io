@@ -47,4 +47,9 @@ vscode는 마이크로소프트에서 배포한 윈도우, 맥, 리눅스에서 
 
 ---
 참고문서
+<details>
+<summary>참고문서</summary>
+<div markdown="1">
 - [Extensions:ROS](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
+</div>
+</details>
