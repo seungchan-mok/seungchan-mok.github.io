@@ -32,7 +32,7 @@ vscode는 마이크로소프트에서 배포한 윈도우, 맥, 리눅스에서 
 - `ROS:Preview URDF` : URDF파일을 Rviz에 띄우지 않고 미리보기를 할 수 있습니다. urdf파일에서 명령어를 실행하면 아래와 같이 미리보기 화면을 제공합니다.
 ![](/../image/ros_urdf_preview_in_vscode.png)
 - `ROS:Update Python Path` : ROS python에 대한 Path를 설정합니다. `~/.bashrc`에 export되어 있는 ROS Path뿐만 아니라 각 패키지 별 `CMakeList.txt`의 dependency 설정에 따라 Path를 설정해 줍니다. Path를 설정하게 되면 ROS Python의 자동완성기능을 사용할 수 있습니다.
-- `ROS:Update C++ Path` : 마친가지로 cpp의 Path를 설정해 줍니다.
+- `ROS:Update C++ Path` : 마찬가지로 cpp의 Path를 설정해 줍니다.
 - `ROS:Create Terminal` : Terminal이 생성됩니다. 하지만 workspace별로 `source devel/setup.sh`는 다시 해주어야 합니다.
 - `ROS:Create Catkin Package` : workspace에서 `catkin_create_pkg <package_name> [depend1] [depend2] [depend3]`을 한 결과와 같습니다. catkin pkg을 생성합니다.
 - `ROS:Run a ROS executable (rosrun)` : workspace 별로 `source devel/setup.sh`을 하지 않아도 바로 패키지를 실행할 수 있습니다. 기능은 `rosrun <pkg> <node>` 와 같습니다. 저는 이 명령어에 단축키를 할당했습니다.
@@ -46,7 +46,6 @@ vscode는 마이크로소프트에서 배포한 윈도우, 맥, 리눅스에서 
 - break point를 이용한 debug기능을 제공합니다. [설명](https://github.com/ms-iot/vscode-ros/blob/master/doc/debug-support.md#attach)
 
 ---
-참고문서
 <details>
 <summary>참고문서</summary>
 <div markdown="1">
