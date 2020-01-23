@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "vscode ros 환경 구축하기"
-description: Jekyll을 이용한 github 블로그 만들기
+description: vscode ros 환경 구축하기
 tags: ROS
 date: 2020-01-23 21:31:58
 comments: true
