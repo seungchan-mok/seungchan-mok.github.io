@@ -12,12 +12,14 @@
 
 - jekyll로 github 블로그 만들기 - 쓰는중
 - disqus댓글 enable하기
+- 마크다운 문법 정리
 
 ### ROS
 
 - ubuntu,ros 기본 명령어
 - cmake list의 구조
 - vscode ros setting
+- break point debug설정 qtcreator, vscode
 
 ### SLAM
 
