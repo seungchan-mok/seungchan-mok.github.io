@@ -28,6 +28,7 @@
 
 - 서버구축하기
 - back propagation
+- pytorch tutorials
 
 ### ETC
 
