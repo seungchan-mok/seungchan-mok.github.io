@@ -27,7 +27,7 @@ vscode는 마이크로소프트에서 배포한 윈도우, 맥, 리눅스에서 
 
 ## ROS Command Line
 
-아래는 각 명령어에 대한 설명입니다.
+아래는 각각의 명령어에 대한 설명입니다.
 
 - `ROS:Preview URDF` : URDF파일을 Rviz에 띄우지 않고 미리보기를 할 수 있습니다. urdf파일에서 명령어를 실행하면 아래와 같이 미리보기 화면을 제공합니다.
 ![](/../image/ros_urdf_preview_in_vscode.png)
