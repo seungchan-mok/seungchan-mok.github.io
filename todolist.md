@@ -32,3 +32,4 @@
 ### ETC
 
 - vscode setting
+- otzu thresholding
