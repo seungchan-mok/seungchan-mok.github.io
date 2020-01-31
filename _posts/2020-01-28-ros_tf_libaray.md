@@ -25,10 +25,11 @@ tf를 활용하는 좋은 예는 로봇 좌표계로부터 월드 좌표계로 �
 
 > 월드 좌표계로부터 로봇의 좌표, 로봇 좌표로부터 검출된 물체의 좌표값이 주어질때, 월드 좌표계 일정 범위 안에 검출된 물체의 개수?
 
-![car](https://github.com/msc9533/msc9533.github.io/blob/master/image/car_tf3.png?raw=true)  
-[bag file](https://github.com/msc9533/msc9533.github.io/raw/master/_files/2020-01-30-13-12-20.bag)
+![car](https://github.com/msc9533/msc9533.github.io/blob/master/image/car_tf4.png?raw=true)  
 
-예제 백파일
+[bag file](https://github.com/msc9533/msc9533.github.io/raw/master/_files/2020-01-30-13-12-20.bag)  
+
+첨부된 bag file에는 frame_id가 /odom인 /odom topic과 
 
 다음은 tf를 이용해 변환하는 예제입니다.
 
