@@ -2,7 +2,6 @@
 
 ## admin
 
-- 카테고리별로 나누기
 - profile 작성하기
 
 ## post
@@ -28,6 +27,10 @@
 - 서버구축하기
 - back propagation
 - pytorch tutorials
+
+### Algorithm
+
+- Dijkstra, A-star algorithm
 
 ### ETC
 
