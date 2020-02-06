@@ -39,10 +39,19 @@ bagfile에서 `rqt`로 tf tree를 확인하면 다음과 같은 tree를 확인 �
 
 그리고 로봇의 위치에 따른 변환 행렬은 다음과 같습니다. 이때 로봇의 위치는 6 자유도 환경에서 x,y,yaw(theta) 값만 사용한다고 가정합니다.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=T^{static}&space;=&space;\begin{bmatrix}&space;cos\theta&-sin\theta&space;&&space;0&space;&&space;x&space;\\&space;sin\theta&&space;cos\theta&space;&&space;0&space;&y&space;\\&space;0&&space;0&&space;1&space;&&space;0\\&space;0&0&space;&0&space;&1&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T^{static}&space;=&space;\begin{bmatrix}&space;cos\theta&-sin\theta&space;&&space;0&space;&&space;x&space;\\&space;sin\theta&&space;cos\theta&space;&&space;0&space;&y&space;\\&space;0&&space;0&&space;1&space;&&space;0\\&space;0&0&space;&0&space;&1&space;\end{bmatrix}" title="T^{static} = \begin{bmatrix} cos\theta&-sin\theta & 0 & x \\ sin\theta& cos\theta & 0 &y \\ 0& 0& 1 & 0\\ 0&0 &0 &1 \end{bmatrix}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=T&space;=&space;\begin{bmatrix}&space;cos\theta&-sin\theta&space;&&space;0&space;&&space;x&space;\\&space;sin\theta&&space;cos\theta&space;&&space;0&space;&y&space;\\&space;0&&space;0&&space;1&space;&&space;0\\&space;0&0&space;&0&space;&1&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T&space;=&space;\begin{bmatrix}&space;cos\theta&-sin\theta&space;&&space;0&space;&&space;x&space;\\&space;sin\theta&&space;cos\theta&space;&&space;0&space;&y&space;\\&space;0&&space;0&&space;1&space;&&space;0\\&space;0&0&space;&0&space;&1&space;\end{bmatrix}" title="T = \begin{bmatrix} cos\theta&-sin\theta & 0 & x \\ sin\theta& cos\theta & 0 &y \\ 0& 0& 1 & 0\\ 0&0 &0 &1 \end{bmatrix}" /></a>
 
 그러므로 base_scan에서 odom으로의 좌표변환은 다음과 같이 프로그래밍 할 수 있습니다.
 
+먼저 자신의 workspace로 이동해 다음과 같이 `tf_tutorials` package를 만들어 줍니다.
+
+```bash
+$ catkin_create_pkg tf_tutorials roscpp rospy nav_msgs std_msgs sensor_msgs tf tf2
+```
+
+그리고 아래와 같이 `/scan` msg의 callback함수에 점들을 변환한뒤 publish하는 부분을 작성합니다.
+
+<!-- 변환 행렬식으로 변환하는 예제 -->
 ```cpp
 
 ```
@@ -51,14 +60,18 @@ bagfile에서 `rqt`로 tf tree를 확인하면 다음과 같은 tree를 확인 �
 
 ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동일한 동작을 가능하게 합니다.
 
+<!-- tf 라이브러리 사용하는 예제 -->
 ```cpp
 
 ```
 
+<!-- tf 라이브러리 사용할때 시간에 대한 내용 언급 부터 2편으로 넘겨도 될듯 -->
+
+<!-- 
 
 ## tf 시간?
 
-- 시간있는이유?
+- 시간있는이유? -->
 
 
 
