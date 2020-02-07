@@ -46,14 +46,60 @@ bagfile에서 `rqt`로 tf tree를 확인하면 다음과 같은 tree를 확인 �
 먼저 자신의 workspace로 이동해 다음과 같이 `tf_tutorials` package를 만들어 줍니다.
 
 ```bash
-$ catkin_create_pkg tf_tutorials roscpp rospy nav_msgs std_msgs sensor_msgs tf tf2
+$ catkin_create_pkg tf_tutorials roscpp rospy nav_msgs std_msgs sensor_msgs tf tf2 geometry_msgs
 ```
 
 그리고 아래와 같이 `/scan` msg의 callback함수에 점들을 변환한뒤 publish하는 부분을 작성합니다.
 
 <!-- 변환 행렬식으로 변환하는 예제 -->
 ```cpp
+void transform_manually(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointCloud *output)
+{
+    //Transform Matrix from global pose
+    double pose_x = global_pose.pose.pose.position.x;
+    double pose_y = global_pose.pose.pose.position.y;
+    double th;
+    //quaternion to RPY conversion
+    tf::Quaternion q(
+        global_pose.pose.pose.orientation.x,
+        global_pose.pose.pose.orientation.y,
+        global_pose.pose.pose.orientation.z,
+        global_pose.pose.pose.orientation.w);
+    tf::Matrix3x3 m(q);
+    double roll, pitch, yaw;
+    m.getRPY(roll, pitch, yaw);
+    th = yaw;
+    // add static transform
+    double T[4][4] = {
+        {cos(th), -sin(th), 0, pose_x - 0.032},
+        {sin(th), cos(th), 0, pose_y + 0.182},
+        {0, 0, 1, 0},
+        {0, 0, 0, 1}};
+    //transform
+    for(size_t i = 0;i < input_cloud->points.size();i++)
+    {
+        geometry_msgs::Point32 point = input_cloud->points.at(i);
+        geometry_msgs::Point32 T_point;
+        T_point.x = point.x*T[0][0] + point.y*T[0][1] + T[0][3];
+        T_point.y = point.x*T[1][0] + point.y*T[1][1] + T[1][3];
+        output->points.push_back(T_point);
+    }
+    //header copy
+    output->header.frame_id = "/odom";
+    output->header.stamp = ros::Time::now();
+    //intensity or etc value
+    output->channels = input_cloud->channels;
+}
 
+
+void pointcloud_callback(const sensor_msgs::LaserScan::ConstPtr &msg)
+{
+    sensor_msgs::PointCloud cloud;
+    projector_.projectLaser(*msg, cloud);
+
+    sensor_msgs::PointCloud transform_cloud;
+    transform_manually(&cloud,&transform_cloud);
+}
 ```
 
 실행한 결과는 다음과 같습니다.  
@@ -84,7 +130,7 @@ ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동
 - [TePRA2013_Foote.pdf](http://wiki.ros.org/Papers/TePRA2013_Foote?action=AttachFile&do=view&target=TePRA2013_Foote.pdf)
 - [Transformation matrix](https://en.wikipedia.org/wiki/Transformation_matrix)
 - [ROS wiki - tf tutorials](http://wiki.ros.org/tf/Tutorials)
-
+- [laser_geometry](http://wiki.ros.org/laser_geometry)
 </div>
 </details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>
