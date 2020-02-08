@@ -101,8 +101,10 @@ void pointcloud_callback(const sensor_msgs::LaserScan::ConstPtr &msg)
     transform_manually(&cloud,&transform_cloud);
 }
 ```
+<!-- 디버깅필요 -->
 
 실행한 결과는 다음과 같습니다.  
+<!-- 바뀐 포인트클라우드 gif파일로 -->
 
 ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동일한 동작을 가능하게 합니다.
 
@@ -110,16 +112,6 @@ ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동
 ```cpp
 
 ```
-
-<!-- tf 라이브러리 사용할때 시간에 대한 내용 언급 부터 2편으로 넘겨도 될듯 -->
-
-<!-- 
-
-## tf 시간?
-
-- 시간있는이유? -->
-
-
 
 ---
 
