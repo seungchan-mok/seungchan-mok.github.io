@@ -53,6 +53,7 @@ $ catkin_create_pkg tf_tutorials roscpp rospy nav_msgs std_msgs sensor_msgs tf t
 
 <!-- 변환 행렬식으로 변환하는 예제 -->
 ```cpp
+
 void transform_manually(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointCloud *output)
 {
     //Transform Matrix from global pose
@@ -72,16 +73,18 @@ void transform_manually(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::
     // add static transform
     double T[4][4] = {
         {cos(th), -sin(th), 0, pose_x - 0.032},
-        {sin(th), cos(th), 0, pose_y + 0.182},
-        {0, 0, 1, 0},
+        {sin(th), cos(th), 0, pose_y},
+        {0, 0, 1, 0.182},
         {0, 0, 0, 1}};
     //transform
+    std::cout << th << std::endl;
     for(size_t i = 0;i < input_cloud->points.size();i++)
     {
         geometry_msgs::Point32 point = input_cloud->points.at(i);
         geometry_msgs::Point32 T_point;
         T_point.x = point.x*T[0][0] + point.y*T[0][1] + T[0][3];
         T_point.y = point.x*T[1][0] + point.y*T[1][1] + T[1][3];
+        T_point.z = point.x*T[2][0] + point.y*T[2][1] + T[2][3];
         output->points.push_back(T_point);
     }
     //header copy
