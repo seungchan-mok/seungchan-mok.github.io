@@ -108,6 +108,7 @@ void pointcloud_callback(const sensor_msgs::LaserScan::ConstPtr &msg)
 
 실행한 결과는 다음과 같습니다.  
 <!-- 바뀐 포인트클라우드 gif파일로 -->
+![](https://github.com/msc9533/msc9533.github.io/blob/master/image/ezgif-2-16118fe3a077.gif?raw=true)
 
 ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동일한 동작을 가능하게 합니다.
 
