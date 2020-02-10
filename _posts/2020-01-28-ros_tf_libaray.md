@@ -113,8 +113,44 @@ ROS의 tf를 사용하면 다음과 같은 코드는 위의 예제와 거의 동
 
 <!-- tf 라이브러리 사용하는 예제 -->
 ```cpp
-
+void transform_tf(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointCloud *output)
+{
+    //get transform from tf listener
+    tf::StampedTransform transform;
+    tf::TransformListener listener;
+    try
+    {
+        listener.waitForTransform("odom", "base_scan", ros::Time(0), ros::Duration(1.5));
+        listener.lookupTransform("odom", "base_scan", ros::Time(0), transform);
+    }
+    catch (tf::TransformException ex)
+    {
+        ROS_ERROR("%s", ex.what());
+        ros::Duration(1.0).sleep();
+    }
+    for(size_t i = 0;i < input_cloud->points.size();i++)
+    {
+        geometry_msgs::Point32 point = input_cloud->points.at(i);
+        tf::Vector3 point_vec(point.x,point.y,point.z);
+        tf::Vector3 new_point = transform*point_vec;
+        geometry_msgs::Point32 T_point;
+        T_point.x = new_point.getX();
+        T_point.y = new_point.getY();
+        T_point.z = new_point.getZ();
+        output->points.push_back(T_point);
+    }
+    //header copy
+    output->header.frame_id = "/odom";
+    output->header.stamp = ros::Time::now();
+    //intensity or etc value
+    output->channels = input_cloud->channels;
+}
 ```
+
+실행결과는 다음과 같습니다.
+
+
+
 
 ---
 
