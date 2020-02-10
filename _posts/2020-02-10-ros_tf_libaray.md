@@ -2,16 +2,11 @@
 layout: post
 title: "ROS tf 라이브러리 사용하기"
 description: ROS tf 라이브러리 사용하기
-# tags: ROS
-date: 2020-01-27 16:37:00
+tags: ROS
+date: 2020-02-10 11:35:09
 comments: true
 ---
 # ROS tf 라이브러리 사용하기
-
-contents
-- tf란?
-- 기본 튜토리얼
-- tf소요시간?
 
 ## tf란?
 
@@ -128,6 +123,7 @@ void transform_tf(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointC
         ROS_ERROR("%s", ex.what());
         ros::Duration(1.0).sleep();
     }
+    // transform
     for(size_t i = 0;i < input_cloud->points.size();i++)
     {
         geometry_msgs::Point32 point = input_cloud->points.at(i);
@@ -149,8 +145,16 @@ void transform_tf(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointC
 
 실행결과는 다음과 같습니다.
 
+![](https://github.com/msc9533/msc9533.github.io/blob/master/image/ezgif-2-6a36d90abed5.gif?raw=true)
 
+결과는 조금 다르지만 tf방식이 좀더 복잡한 변환에 적합하다는 것을 알 수 있습니다.
+tf tree만 잘 연결 되어 있다면 
+```
+listener.lookupTransform("odom", "base_scan", ros::Time(0), transform);
+```
+이 한줄로 변환 행렬을 얻을 수 있습니다.
 
+다음 포스트에서는 tf 방식과 직접 변환하는 방식의 차이에 대해 좀더 자세히 알아 보겠습니다.
 
 ---
 
@@ -162,6 +166,8 @@ void transform_tf(const sensor_msgs::PointCloud *input_cloud,sensor_msgs::PointC
 - [Transformation matrix](https://en.wikipedia.org/wiki/Transformation_matrix)
 - [ROS wiki - tf tutorials](http://wiki.ros.org/tf/Tutorials)
 - [laser_geometry](http://wiki.ros.org/laser_geometry)
+
+
 </div>
 </details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>
