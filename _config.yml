@@ -54,4 +54,4 @@ kramdown:
   hard_wrap: true
 
 exclude: ['README.md', 'LICENSE', 'todolist.md']
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-10-ros_tf_libaray.md']
+# exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-10-ros_tf_libaray.md']
