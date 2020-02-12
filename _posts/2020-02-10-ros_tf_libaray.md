@@ -95,7 +95,6 @@ void pointcloud_callback(const sensor_msgs::LaserScan::ConstPtr &msg)
     transform_manually(&cloud,&transform_cloud);
 }
 ```
-<!-- 디버깅필요 -->
 
 실행한 결과는 다음과 같습니다.  
 <!-- 바뀐 포인트클라우드 gif파일로 -->
