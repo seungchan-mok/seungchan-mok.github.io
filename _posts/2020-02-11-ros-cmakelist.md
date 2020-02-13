@@ -11,7 +11,7 @@ comments: true
 
 ## CMake란?
 
-`CMake`란 빌드 프로세스를 관리하는 오픈소스 시스템입니다. 
+`CMake`란 빌드 프로세스를 관리하는 오픈소스 시스템입니다. CMakeList.txt에 있는 구성되로 컴파일 옵션을 주는 방식으로 되어있습니다. 
 
 <!-- cmakelist 기본 컨셉? -->
 <!-- cmake list 장점 -->
