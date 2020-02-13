@@ -16,6 +16,13 @@
 - cmake list의 구조
 - break point debug설정 qtcreator, vscode
 - tf
+- launch file 작성
+- camera permission chmod??
+- bash shell script
+- ros service
+- ros custom msg
+- 꿀팁 모음
+  - pkg 만들기
 
 ### SLAM
 
