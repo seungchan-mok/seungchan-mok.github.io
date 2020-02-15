@@ -9,7 +9,6 @@
 ### jekyll
 
 - disqus댓글 enable하기
-- 마크다운 문법 정리
 
 ### ROS
 
@@ -18,6 +17,7 @@
 - tf
 - launch file 작성
 - camera permission chmod??
+  - ros-usb-cam fork해서 사용법 만들기
 - bash shell script
 - ros service
 - ros custom msg
