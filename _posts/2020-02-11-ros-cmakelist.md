@@ -30,6 +30,7 @@ project(tf_tutorials) # 프로젝트명입니다.
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+# ros depency 에 대한 설정을 해주는 부분입니다.
 find_package(catkin REQUIRED COMPONENTS
   
 )
