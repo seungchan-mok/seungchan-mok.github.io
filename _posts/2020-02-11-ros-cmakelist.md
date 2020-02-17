@@ -20,7 +20,7 @@ comments: true
 <!-- add excutable, taget link library -->
 <!-- 튜토리얼에 있는거 주석달아서 설명 -->
 다음은 CMakeList.txt에 대한 간단한 주석입니다.  
-```
+```bash
 cmake_minimum_required(VERSION 2.8.3) # 필요한 최소 CMake 버전입니다.
 project(tf_tutorials) # 프로젝트명입니다.
 
