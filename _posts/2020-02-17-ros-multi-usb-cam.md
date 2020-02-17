@@ -2,7 +2,7 @@
 layout: post
 title: "ROS usb cam 2개이상의 카메라에서 사용하기"
 description: ROS usb cam 2개이상의 카메라에서 사용하기
-tags: ROS
+# tags: ROS
 date: 2020-02-17 12:27:29
 comments: true
 ---
