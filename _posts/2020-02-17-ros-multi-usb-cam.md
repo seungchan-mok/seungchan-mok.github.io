@@ -2,7 +2,7 @@
 layout: post
 title: "ROS usb cam 2개이상의 카메라에서 사용하기"
 description: ROS usb cam 2개이상의 카메라에서 사용하기
-# tags: ROS
+tags: ROS
 date: 2020-02-17 12:27:29
 comments: true
 ---
@@ -36,7 +36,44 @@ $ sudo chmod 777 /dev/video{number}
 ## usb_cam launch file수정하기
 
 <!-- 그룹 노드 -->
-<!-- 재귀 런치파일? -->
+만약 `rosrun`을 이용해 하나의 usbcam노드를 실행시키는 것은 아무런 문제가 없습니다. 하지만 2개 이상의 노드를 실행시키면 중복된 노드를 켤수 없다는 오류메시지가 뜨며 하나의 노드의 실행이 중지됩니다. 2개이상의 같은 노드를 실행시키기 위해서는 이 노드를 분리해서 실행 시켜야 합니다.
+먼저 2개의 usb cam을 사용하는 launch파일은 다음과 같습니다.
+```
+<launch>
+ <group ns="camera1">
+  <node name="usb_cam1" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="yuyv" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/camera1/usb_cam1/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+ </group>
+<group ns="camera2">
+  <node name="usb_cam2" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="1280" />
+    <param name="image_height" value="720" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="yuyv" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/camera2/usb_cam2/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+ </group>
+</launch>
+```
+
+`group`을 이용해 같은 노드가 실행될 수 있게합니다. 이때 publish되는 topic명은 camera1/usb_cam1/image_raw,camera2/usb_cam2/image_raw 와 같이 {group name}/{camera name}/image_raw로 publish 됩니다.
+2개 이상의 카메라를 쓰는 경우 camera3,camera4...처럼 실행 시킬수도 있습니다.
+
 
 ---
 
@@ -45,8 +82,6 @@ $ sudo chmod 777 /dev/video{number}
 <div markdown="1">
 
 - [github - ros-drivers/usb_cam](https://github.com/ros-drivers/usb_cam)
-- [ROS Wiki - How do I create dynamic launch files?](https://answers.ros.org/question/229489/how-do-i-create-dynamic-launch-files/)
-- [ROS:: usb캠 사용하기, fps 향상 (usb_cam, logitech c920)](https://m.blog.naver.com/PostView.nhn?blogId=nswve&logNo=221483691234&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
 
 </div>
 </details>

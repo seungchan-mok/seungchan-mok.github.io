@@ -54,4 +54,4 @@ kramdown:
   hard_wrap: true
 
 # exclude: ['README.md', 'LICENSE', 'todolist.md']
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md','_posts/2020-02-17-ros-multi-usb-cam.md']
+exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md']
