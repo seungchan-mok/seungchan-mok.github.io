@@ -12,7 +12,7 @@ comments: true
 여러 Cheat Sheet들이 제공되고 있지만 저는 개인적으로 한페이지로 인쇄해서 붙여놓는 것을 선호해서 출력용으로 정리해 보았습니다. 
 직접 튜토리얼을 따라해보면서 약간 추가된 내용도 같이 넣어두었습니다.  
 이 출력파일과 키보드그림으로 제공되는 [Cheat Sheet](https://reebok.tistory.com/51) 2장을 출력해서 사용하고 있습니다!
-[vim cheat sheet.pdf]()
+[vim cheat sheet.pdf](https://github.com/msc9533/msc9533.github.io/raw/master/_files/vim_cheat_sheet.pdf)
 
 ---
 
