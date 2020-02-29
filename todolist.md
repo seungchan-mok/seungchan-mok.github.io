@@ -8,8 +8,6 @@
 
 ### jekyll
 
-- disqus댓글 enable하기
-
 ### ROS
 
 - cmake list의 구조
