@@ -9,6 +9,7 @@ comments: true
 
 # ROS Custom msg 튜토리얼
 
+ROS에서는 Custom message를 지원합니다. ROS kinetic을 기준으로 간단한 튜토리얼을 해보겠습니다.
 
 ---
 
