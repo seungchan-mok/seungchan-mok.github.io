@@ -55,4 +55,4 @@ kramdown:
 
 # exclude: ['README.md', 'LICENSE', 'todolist.md']
 # exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md']
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md','2020-02-29-ros-custom-msg.md']
+exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md','_posts/2020-02-29-ros-custom-msg.md']
