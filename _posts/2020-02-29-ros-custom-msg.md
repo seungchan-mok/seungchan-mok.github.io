@@ -30,14 +30,64 @@ fieldtype3 fieldname3
 ```
 Header header
 int64 num1
-Pointcloud2 point_cloud
+sensor_msgs/PointCloud2 pcl2
 ```
 
-보통 이 msg파일은 package폴더내에 msg폴더에 위치하는것이 일반적입니다.  
+보통 이 msg파일은 독립적인 msg_package로 존재하며 package폴더내에 msg폴더에 위치하는것이 일반적입니다.
 msg파일을 패키지와 함께 build하기위해선 패키지의 CMakeList.txt에서 빌드 스크립트를 호출해야 합니다.  
 <!-- 여기 내용확인! 빌드안됨.. -->
 먼저 `package.xml`에서 다음 두줄을 추가해 줍니다.
 
+```
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+```
+
+그다음 CMakeList.txt의 내용을 수정해야 합니다.  
+
+먼저 `find_package`에 내용을 추가해 줍니다.
+```
+find_package(catkin REQUIRED COMPONENTS
+  ...
+  ...
+  message_generation
+)
+```
+그런뒤 `add_message_files`과 `generate_messages`를 추가해 줍니다. 이때 add_message_files의 DIRECTORY에는 패키지에서 msg파일이 존재하는 디렉토리를, FILES 뒤에는 앞에서 정의한 msg파일의 이름을 적어줍니다.  
+
+generate_messages에는 std_msgs와 앞에서 정의한 msg type에 다른 패키지의 msg를 포함하고 있다면 (이 예시에서는 sensor_msgs입니다.) dependency를 추가해 줍니다. 
+
+```
+add_message_files(
+  DIRECTORY msg
+  FILES
+  msg_test.msg
+)
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+   sensor_msgs
+)
+```
+
+마지막으로 `catkin_package`에 CATKIN_DEPENDS뒤에 message_runtime를 추가해 줍니다.
+
+```
+catkin_package(
+    ...
+CATKIN_DEPENDS .... message_runtime
+    ...
+)
+```
+
+이제 다른 package에서 다음과 같이 msg를 include, import해줄수 있습니다.
+```cpp
+#include <msg_test/msg_test.h>
+```
+
+```py
+from msg_test.msg import msg_test
+```
 
 ---
 
