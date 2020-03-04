@@ -2,8 +2,8 @@
 layout: post
 title: "ROS Custom msg 튜토리얼"
 description: ROS Custom msg 튜토리얼
-# tags: etc
-date: 2020-02-26 15:13:13
+tags: ROS
+date: 2020-03-04 14:39:02
 comments: true
 ---
 
@@ -103,3 +103,4 @@ from msg_test.msg import msg_test
 </div>
 </details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>
+
