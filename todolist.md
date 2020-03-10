@@ -14,13 +14,8 @@
 - break point debug설정 qtcreator, vscode
 - tf
 - launch file 작성
-- camera permission chmod??
-  - ros-usb-cam fork해서 사용법 만들기
 - bash shell script
 - ros service
-- ros custom msg
-- 꿀팁 모음
-  - pkg 만들기
 
 ### SLAM
 
@@ -32,12 +27,14 @@
 - 서버구축하기
 - back propagation
 - pytorch tutorials
+- 딥러닝책
 
 ### Algorithm
 
-- Dijkstra, A-star algorithm
+- RANSAC matching
+- Dijkstra, A-star,Hybrid a-star algorithm
+- otzu thresholding
 
 ### ETC
 
 - vscode setting
-- otzu thresholding
