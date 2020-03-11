@@ -28,6 +28,8 @@
 - back propagation
 - pytorch tutorials
 - 딥러닝책
+- k-mean clustering
+- Hierarchical clustering
 
 ### Algorithm
 
