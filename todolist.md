@@ -12,7 +12,7 @@
 
 - cmake list의 구조
 - break point debug설정 qtcreator, vscode
-- tf
+- tf broad cast + encoder odom
 - launch file 작성
 - bash shell script
 - ros service
