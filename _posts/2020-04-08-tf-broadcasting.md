@@ -120,7 +120,9 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr &msg){
     tf::Transform transform;
 
     // msg 의 xyz로 translation matrix를 설정
-    transform.setOrigin(tf::Vector3(msg->pose.pose.position.x,msg->pose.pose.position.y,msg->pose.pose.position.z));
+    transform.setOrigin(tf::Vector3(msg->pose.pose.position.x,
+                                    msg->pose.pose.position.y,
+                                    msg->pose.pose.position.z));
     tf::Quaternion q;
 
     // rotation matrix의 역할을 할 quaternion 값을 설정
@@ -159,7 +161,14 @@ def tf_broad(msg):
     br = tf.TransformBroadcaster()
     # xyz, quaternion값을 직접 sendTransform
     # map - base_link
-    br.sendTransform((msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z),[msg.pose.pose.orientation.x,msg.pose.pose.orientation.y,msg.pose.pose.orientation.z,msg.pose.pose.orientation.w],rospy.Time.now(),"base_link","map")
+    br.sendTransform((msg.pose.pose.position.x, 
+                    msg.pose.pose.position.y, 
+                    msg.pose.pose.position.z),
+                    [msg.pose.pose.orientation.x,
+                    msg.pose.pose.orientation.y,
+                    msg.pose.pose.orientation.z,
+                    msg.pose.pose.orientation.w],
+                    rospy.Time.now(),"base_link","map")
 
 if __name__ == '__main__':
     rospy.init_node('tf_broadcast_py')
