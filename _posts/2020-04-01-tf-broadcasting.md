@@ -103,14 +103,22 @@ if __name__ == '__main__':
 
 ![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/keyboard_odom.gif)
 
-<!-- 키보드 입력 노드, 오도메트리 퍼블리시 따로 -->
-<!-- tf broad cast node -->
+## tf broadcaster
 
-<!-- 키보드로 오도메트리 퍼블리시하는 노드 -->
-<!-- 여기에 tf 퍼블리시 -->
-<!-- 라이다? -->
+이제 이 odometry를 이용해 tf broadcasting node를 만들겠습니다. 이 예제는 [cpp](###-tf-broadcaster---cpp)와 [python](###-tf-broadcaster---python)으로 나누어 진행하겠습니다.
 
-<!-- 변형예제?? -->
+### tf broadcaster - cpp
+
+```cpp
+```
+
+### tf broadcaster - python
+
+```py
+```
+
+<!-- 브로드 캐스터 마무리 하고  -->
+<!-- 스태틱 퍼블리셔 내용만 추가 -->
 
 ---
 
