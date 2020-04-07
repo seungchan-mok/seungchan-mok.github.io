@@ -44,7 +44,7 @@ import sys, select, os
 from std_msgs.msg import String
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
-from math import cos, sin, tan
+from math import cos, sin, tan,pi
 import tf
 V,W = 0.0,0.0
 x,y,heading = 0.0,0.0,0.0
@@ -53,7 +53,9 @@ def control_input(msg):
     global V,W
     print('callback!')
     V = msg.linear.x * 0.0001
-    W = msg.angular.z * 0.01 #deg
+    W = -msg.angular.z *(pi/180) * 0.01 
+    # subscribe되는 단위는 arduino에서 쓰기 편하게 맞춘 단위이므로 
+    # scale을 낮춰 주었습니다.
 
 def odom_pub():
     global V,W,x,y,heading
@@ -64,25 +66,30 @@ def odom_pub():
     odom_publisher = rospy.Publisher('odom_msg', Odometry,queue_size=1)
     previousTime = rospy.Time.now()
     while not rospy.is_shutdown():
+        # 시간의 변화량
         delta_time = (rospy.Time.now() - previousTime).to_sec()
+        # 이동한 거리입니다.
         delta_transltation = V*delta_time
         delta_angle = W*delta_time
+        # 각도의 변화량
         heading = heading + delta_angle
+        # heading방향으로 delta_translation 만큼 이동했을때
+        # 위치를 x,y좌표로 나타내면 아래와 같이 계산할 수 있습니다.
         x = x + delta_transltation*cos(heading)
         y = y + delta_transltation*sin(heading)
+
+        # 계산된 위치로 Odometry를 publish해줍니다.
         pubMsg = Odometry()
         pubMsg.header.stamp = rospy.Time.now()
         pubMsg.header.frame_id = '/map'
         pubMsg.pose.pose.position.x = x
         pubMsg.pose.pose.position.y = y
-        quat = tf.transformations.quaternion_from_euler(0.0,0.0,numpy.deg2rad(heading))
+        quat = tf.transformations.quaternion_from_euler(0.0,0.0,heading)
         pubMsg.pose.pose.orientation.x = quat[0]
         pubMsg.pose.pose.orientation.y = quat[1]
         pubMsg.pose.pose.orientation.z = quat[2]
         pubMsg.pose.pose.orientation.w = quat[3]
         odom_publisher.publish(pubMsg)
-        print('delta_time ',delta_time)
-        print('xy : ' + str(x) + ','+ str(y))
         rate.sleep()
 
 if __name__ == '__main__':
@@ -91,6 +98,10 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
 ```
+
+여기까지의 결과는 다음과 같습니다.  
+
+![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/keyboard_odom.gif)
 
 <!-- 키보드 입력 노드, 오도메트리 퍼블리시 따로 -->
 <!-- tf broad cast node -->
@@ -117,7 +128,6 @@ if __name__ == '__main__':
 
 
 </div>
-asd
 </details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>
 
