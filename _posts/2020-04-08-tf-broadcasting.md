@@ -217,6 +217,7 @@ rosrun tf static_transform_publisher 0 0 1 0 0 0 /base_link /sensor 10
 - [ROS WIKI - writing a tf listener (Python)](http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20listener%20%28Python%29)
 - [ROS WIKI - Adding a frame(Python)](http://wiki.ros.org/tf/Tutorials/Adding%20a%20frame%20%28Python%29)
 - [Publishing Odometry Information over ROS](http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom)
+- [ROS WIKI - tf#static_transform_publisher](http://wiki.ros.org/tf#static_transform_publisher)
 
 
 </div>
