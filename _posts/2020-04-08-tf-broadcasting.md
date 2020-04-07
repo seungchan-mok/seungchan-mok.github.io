@@ -2,8 +2,8 @@
 layout: post
 title: "tf broad cast 예제"
 description: tf broad cast 예제
-# tags: ROS
-date: 2020-02-26 15:13:13
+tags: ROS
+date: 2020-04-08 00:16:00
 comments: true
 ---
 
@@ -110,15 +110,90 @@ if __name__ == '__main__':
 ### tf broadcaster - cpp
 
 ```cpp
+#include <ros/ros.h>
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
+
+void poseCallback(const nav_msgs::Odometry::ConstPtr &msg){
+    static tf::TransformBroadcaster br;
+    // tf 를 broad cast할 행렬
+    tf::Transform transform;
+
+    // msg 의 xyz로 translation matrix를 설정
+    transform.setOrigin(tf::Vector3(msg->pose.pose.position.x,msg->pose.pose.position.y,msg->pose.pose.position.z));
+    tf::Quaternion q;
+
+    // rotation matrix의 역할을 할 quaternion 값을 설정
+    q.setX(msg->pose.pose.orientation.x);
+    q.setY(msg->pose.pose.orientation.y);
+    q.setZ(msg->pose.pose.orientation.z);
+    q.setW(msg->pose.pose.orientation.w);
+    // set rotation
+    transform.setRotation(q);
+    // map - base_link의 tf를 broadcast
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
+}   
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "tf_broadcaster_cpp");
+  ros::NodeHandle node;
+  ros::Subscriber sub = node.subscribe("/odom_msg", 10, &poseCallback);
+
+  ros::spin();
+  return 0;
+};
 ```
+
+위와 같은 코드로 `src/tf_broadcast.cpp`를 만듭니다. 코드에 대한 설명은 주석으로 대체합니다.
+
 
 ### tf broadcaster - python
 
 ```py
+#!/usr/bin/env python  
+import rospy
+import tf
+from nav_msgs.msg import Odometry
+
+def tf_broad(msg):
+    br = tf.TransformBroadcaster()
+    # xyz, quaternion값을 직접 sendTransform
+    # map - base_link
+    br.sendTransform((msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z),[msg.pose.pose.orientation.x,msg.pose.pose.orientation.y,msg.pose.pose.orientation.z,msg.pose.pose.orientation.w],rospy.Time.now(),"base_link","map")
+
+if __name__ == '__main__':
+    rospy.init_node('tf_broadcast_py')
+    rospy.Subscriber('odom_msg',Odometry,tf_broad)
+    rospy.spin()
 ```
 
-<!-- 브로드 캐스터 마무리 하고  -->
-<!-- 스태틱 퍼블리셔 내용만 추가 -->
+위의 cpp 예제보다 간단한 모습입니다. ros python에서 많은 msg가 리스트 형식으로 대체되기 때문에 직접 sendTransform 함수에 arguments로 사용하는 것이 더 간단합니다.
+
+### Result
+
+위의 결과 화면은 다음과 같습니다.  
+
+![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/tf_broad_demo.gif)  
+
+이렇게 위치에 대한 값을 구할 수 있을때 tf를 설정해주었습니다. ROS에서 rviz에 좌표계를 일치시켜 message를 visualize한 결과를 보거나 tf listener로 변환행렬을 쉽게 구하는 등 여러 가지로 쓰일 수 있습니다.
+
+### + static_transform_publisher
+
+차량에 고정된 센서같이 변환행렬의 값이 변하지 않는 경우, 위의 방법으로 일일이 tf를 만들기는 번거로운 부분이 있습니다. 이경우 tf 패키지의 static_transform_publisher를 사용합니다. 간단한 arguments로 실행할 수 있습니다.
+
+```bash
+rosrun tf static_transform_publisher x y z R P Y /frame_id /child_frame_id periods
+```
+
+위의 예제에 base_link에 z 축으로 1m만큼 위에 하나의 좌표계를 추가하는 예시를 들겠습니다.
+
+```bash
+rosrun tf static_transform_publisher 0 0 1 0 0 0 /base_link /sensor 10
+```
+
+실행하면 다음과 같은 결과를 얻을 수 있습니다.
+
+![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/static_tf.gif) 
 
 ---
 
@@ -138,4 +213,5 @@ if __name__ == '__main__':
 </div>
 </details>
 <script id="dsq-count-scr" src="//msc9533.disqus.com/count.js" async></script>
+
 
