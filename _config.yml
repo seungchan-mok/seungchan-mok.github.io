@@ -56,5 +56,5 @@ kramdown:
 # exclude: ['README.md', 'LICENSE', 'todolist.md']
 # exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md']
 #exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md']
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-02-11-ros-cmakelist.md']
+exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-04-09-otsu-thresholding.md']
 # 2020-03-10-ransac-1

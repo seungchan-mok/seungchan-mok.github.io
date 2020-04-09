@@ -36,6 +36,8 @@
 - RANSAC matching
 - Dijkstra, A-star,Hybrid a-star algorithm
 - otzu thresholding
+- rrt star
+- k-means clustering
 
 ### ETC
 
