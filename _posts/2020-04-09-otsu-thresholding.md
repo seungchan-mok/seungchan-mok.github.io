@@ -1,4 +1,3 @@
----
 layout: post
 title: "Otsu's Method 구현하기"
 description: Otsu's Method 구현하기
@@ -14,99 +13,64 @@ comments: true
 <!-- 수식적으로 해석 -->
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
-```cpp
-int Otzu_implementation(std::vector<pcl::PointXYZI> *input_vector,int threshold_max,int intensity_max)
-{
-    if(input_vector->size() == 0)
-    {
-        // std::cout << "return empty!" << endl;
-        return intensity_max;
-    }
-    int* histogram = new int[intensity_max+1];
-    //initializing
-    for(int i = 0;i < intensity_max;i++)
-    {
-        histogram[i] = 0;
-    }
+```py
+import matplotlib.pyplot as plt
+from PIL import Image
+import numpy as np
+
+img = np.array(Image.open('lenna.png').convert('L'))
+plt.imshow(img,cmap='gray',vmin=0,vmax=255)
+plt.show()
+
+
+def otsu(arg):
+    N = 220*220
+    histogram = [0]*255
+    # make histo
+    for line in arg:
+        for pixel in line:
+            histogram[pixel] = histogram[pixel] + 1
     
-
-    //make histogram
-    for(size_t i = 0;i<input_vector->size();i++)
-    {
-        int histo_index = (int)input_vector->at(i).intensity;
-        if(histo_index > intensity_max)
-        {
-            // cout << "out of histo index!" << endl;
-            // histo_index = intensity_max;
-        }
-        else
-        {
-            histogram[histo_index]++;
-        }
-    }
+    sumofHistogram = sum(histogram)
+    meanofHistogram = float(sumofHistogram)/(N*2)
+    for index in range(len(histogram)):
+        if meanofHistogram > histogram[index]:
+            histogram[index] = 0
     
-    size_t N = input_vector->size();
+    threshold = 0
+    sumA = 0.0
+    sumB = 0.0
+    q1 = 0
+    q2 = 0
+    varMax = 0.0
+    for i in range(len(histogram)):
+        sumA += i*histogram[i]
+    for i in range(len(histogram)):
+        q1 += histogram[i]
+        if q1 == 0:
+            continue
+        q2 = N - q1
+        if q2 == 0:
+            break
+        sumB += float(i*histogram[i])
+        m1 = sumB / q1
+        m2 = (sumA - sumB) / q2
+        varBetween = float(q1) * float(q2) * (m1 - m2) * (m1 - m2)
+        if varBetween > varMax:
+            varMax = varBetween
+            threshold = i
+    return threshold
 
-    //high pass filter
-    long long int sum_of_histo = 0;
-    for(int i = 0;i < intensity_max;i++)
-    {
-        sum_of_histo += histogram[i];
-    }
-    double mean_of_histo = (double)sum_of_histo / (2.0*N);
-    for(int i = 0;i < intensity_max;i++)
-    {
-        if(mean_of_histo > histogram[i])
-        {
-            histogram[i] = 0;
-        }
-    }
+thres = otsu(img)
+for i in range(len(img)):
+    for j in range(len(img[i])):
+        if thres > img[i][j]:
+            img[i][j] = 0
+        else:
+            img[i][j] = 255
 
-    int threshold = 0;
-    float sum = 0;
-    float sumB = 0;
-    int q1 = 0;
-    int q2 = 0;
-    float varMax = 0;
-
-    // Auxiliary value for computing m2
-    for (int i = 0; i < intensity_max; i++){
-      sum += i * ((int)histogram[i]);
-    }
-
-    for (int i = 0 ; i < intensity_max ; i++) {
-      // Update q1
-      q1 += histogram[i];
-      if (q1 == 0)
-        continue;
-      // Update q2
-      q2 = N - q1;
-
-      if (q2 == 0)
-        break;
-      // Update m1 and m2
-      sumB += (float) (i * ((int)histogram[i]));
-      float m1 = sumB / q1;
-      float m2 = (sum - sumB) / q2;
-
-      // Update the between class variance
-      float varBetween = (float) q1 * (float) q2 * (m1 - m2) * (m1 - m2);
-
-      // Update the threshold if necessary
-      if (varBetween > varMax) {
-        varMax = varBetween;
-        threshold = i;
-      }
-    }
-
-    delete[] histogram;
-    if (threshold > threshold_max)
-    {
-        threshold = threshold_max;
-    }
-
-    return threshold;
-}
+plt.imshow(img,cmap='gray',vmin=0,vmax=255)
+plt.show()
 ```
 ---
 
