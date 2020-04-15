@@ -2,7 +2,7 @@
 layout: post
 title: "Otsu's Method 구현하기"
 description: Otsu's Method 구현하기
-tags: Algorithm
+# tags: Algorithm
 date: 2020-04-09 10:26:00
 comments: true
 ---
