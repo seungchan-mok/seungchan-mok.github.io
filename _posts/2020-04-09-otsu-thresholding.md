@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Otsu's Method 구현하기"
 description: Otsu's Method 구현하기
