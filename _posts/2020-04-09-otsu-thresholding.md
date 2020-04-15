@@ -5,6 +5,7 @@ description: Otsu's Method 구현하기
 tags: Algorithm
 date: 2020-04-09 10:26:00
 comments: true
+toc: true
 ---
 
 <!-- 무슨알고리즘인지 간략하게 -->
