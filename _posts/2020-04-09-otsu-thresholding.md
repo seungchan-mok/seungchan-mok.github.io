@@ -30,11 +30,8 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 
 Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. 데이터가 두개의 Gaussian 분포가 합쳐진 분포일 경우에는 `threshold를 기준으로 나뉜 두 분포의 분산은 최소가 된다.` 라는 접근법으로 시작합니다.  
 
-$$
-\begin{align*}
-& \[\sigma^2_W + \sigma^2_B = \sigma^2_T\]
-\end{align*}
-$$
+\[\sigma^2_W + \sigma^2_B = \sigma^2_T\]
+
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
 ```py
