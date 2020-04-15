@@ -24,8 +24,17 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 ## Otsu's method
 <!-- 핵심 알고리즘 원리 -->
 <!-- 수식적으로 해석 -->
+위의 그림에서 임계값은 약 125정도일때 적절하다는 것을 직관적으로 알 수 있습니다. 하지만 조명의 변화와 같이 전체 영상의 밝기에 영향을 미치거나, 배경이 바뀌는 등의 변화가 있을 경우 임계값도 다른 값을 선택해야 할 것입니다.
 
+### Algorithm
 
+Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. 데이터가 두개의 Gaussian 분포가 합쳐진 분포일 경우에는 `threshold를 기준으로 나뉜 두 분포의 분산은 최소가 된다.` 라는 접근법으로 시작합니다.  
+
+$$
+\begin{align*}
+& \[\sigma^2_W + \sigma^2_B = \sigma^2_T\]
+\end{align*}
+$$
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
 ```py
@@ -36,7 +45,6 @@ import numpy as np
 img = np.array(Image.open('lenna.png').convert('L'))
 plt.imshow(img,cmap='gray',vmin=0,vmax=255)
 plt.show()
-
 
 def otsu(arg):
     #size of image
