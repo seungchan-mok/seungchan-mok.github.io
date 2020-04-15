@@ -13,7 +13,7 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 ## Histogram
 
 이진화 문제에서 0아니면 1로 구분하는 값을 threshold, 임계값이라고 합니다. 간단하게 영상에서 예제를 들겠습니다.  
-![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/otsu_test.jpg)  
+![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/otsu_test.jpg | width=100)  
 위 이미지에서 물체가 있는 픽셀을 구분 하는 예제입니다. 이하 이미지는 grayscale을 가정하겠습니다. 이미지의 픽셀의 값은 byte단위의 숫자, 즉 0-255의 값을 가집니다. 이 픽셀값의 분포를 그래프로 나타낸 것을 Histogram이라고 합니다. 예의 이미지의 히스토그램은 다음과 같습니다.  
 
 ![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/_200414Figure_1.png)  
