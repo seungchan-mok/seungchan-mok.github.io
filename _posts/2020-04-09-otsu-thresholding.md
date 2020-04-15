@@ -2,12 +2,10 @@
 layout: post
 title: "Otsu's Method 구현하기"
 description: Otsu's Method 구현하기
-# tags: Algorithm
+tags: Algorithm
 date: 2020-04-09 10:26:00
 comments: true
 ---
-
-# Otsu's Method 구현하기
 
 <!-- 무슨알고리즘인지 간략하게 -->
 Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법입니다. 이진화는 0 이나 1로 변환하는 것을 말하는데, 영상처리에서 이진화는 영상에서 의미 있는 픽셀을 구분하는 방법중 하나로 많이 사용되고 있습니다.  
