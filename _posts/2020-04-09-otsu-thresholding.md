@@ -31,12 +31,20 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 
 ### Algorithm
 
-Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. 데이터가 두개의 Gaussian 분포가 합쳐진 분포일 경우에는 `threshold를 기준으로 나뉜 두 분포의 분산은 최소가 된다.` 라는 접근법으로 시작합니다.  
+Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. Otsu method에서는 이것을 between-class variance가 최대가 되는 지점이라고 정의합니다.  
 
 $$
-\sigma^2_W + \sigma^2_B = \sigma^2_T\
+\sigma^2_W + \sigma^2_B = \sigma^2_T \tag{1}
 $$
 
+이미지를 threshold k 를 기준으로W,B로 나누었을때 W로 나뉠 확률을 $\omega_W$, B는 $\omega_B$라고 할 때, 나뉜 클래스의 평균값$\mu$은 조건부 확률이므로 전체 픽셀의 수 $L$에 대해 다음과 같이 계산할 수 있습니다.
+
+$$
+\mu_W = \sum_{i=1}^k iP_i / \omega_W , 
+\mu_B = \sum_{i=k+1}^L iP_i / \omega_B \tag{2}
+$$
+
+여기서 전체 확률의 합 $\omega_W + \omega_B = 1$이므로 
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
 ```py
@@ -58,12 +66,6 @@ def otsu(arg):
         for pixel in line:
             histogram[pixel] = histogram[pixel] + 1
     
-    sumofHistogram = sum(histogram)
-    meanofHistogram = float(sumofHistogram)/(N*2)
-    for index in range(len(histogram)):
-        if meanofHistogram > histogram[index]:
-            histogram[index] = 0
-    
     threshold = 0
     sumA = 0.0
     sumB = 0.0
@@ -71,20 +73,20 @@ def otsu(arg):
     q2 = 0
     varMax = 0.0
     for i in range(len(histogram)):
-        sumA += i*histogram[i]
+        sum_total += i*histogram[i]
     for i in range(len(histogram)):
-        q1 += histogram[i]
-        if q1 == 0:
+        w_W += histogram[i] 
+        if w_W == 0:
             continue
-        q2 = N - q1
-        if q2 == 0:
+        w_B = N - w_B
+        if w_B == 0:
             break
-        sumB += float(i*histogram[i])
-        m1 = sumB / q1
-        m2 = (sumA - sumB) / q2
-        varBetween = float(q1) * float(q2) * (m1 - m2) * (m1 - m2)
-        if varBetween > varMax:
-            varMax = varBetween
+        sum_W += float(i*histogram[i])
+        mean_W = sum_W / q1
+        mean_B = (sum_total - sum_W) / q2
+        betweenVariance = float(w_W) * float(w_B) * (mean_W - mean_B) * (mean_W - mean_B)
+        if betweenVariance > varMax:
+            varMax = betweenVariance
             threshold = i
     return threshold
 
