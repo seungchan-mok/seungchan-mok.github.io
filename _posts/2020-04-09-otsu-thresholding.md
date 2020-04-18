@@ -47,46 +47,49 @@ $$
 여기서 전체 확률의 합 $\omega_W + \omega_B = 1$이므로 
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
+### 구현
+
 ```py
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 
-img = np.array(Image.open('lenna.png').convert('L'))
+img = np.array(Image.open('test.bmp').convert('L'))
 plt.imshow(img,cmap='gray',vmin=0,vmax=255)
-plt.show()
-
+# plt.show()
+histo = []
 def otsu(arg):
-    #size of image
-    N = 220*220
-    #histogram 0-255
-    histogram = [0]*255
-    # make histo
+    # 입력 이미지의 픽셀수
+    N = len(arg)*len(arg[0]) # number of pixels
+    # 히스토그램
+    histogram = [0]*256
     for line in arg:
         for pixel in line:
             histogram[pixel] = histogram[pixel] + 1
-    
+
     threshold = 0
     sumA = 0.0
     sumB = 0.0
     q1 = 0
     q2 = 0
     varMax = 0.0
+    # 전체 weighted sum calculation
     for i in range(len(histogram)):
-        sum_total += i*histogram[i]
+        sumA += i*histogram[i]
+    
     for i in range(len(histogram)):
-        w_W += histogram[i] 
-        if w_W == 0:
+        q1 += histogram[i] #wF
+        q2 = N - q1 #wB
+        if q1 == 0 or q2 == 0:
             continue
-        w_B = N - w_B
-        if w_B == 0:
-            break
-        sum_W += float(i*histogram[i])
-        mean_W = sum_W / q1
-        mean_B = (sum_total - sum_W) / q2
-        betweenVariance = float(w_W) * float(w_B) * (mean_W - mean_B) * (mean_W - mean_B)
-        if betweenVariance > varMax:
-            varMax = betweenVariance
+        sumB += float(i*histogram[i])
+        # calc left m1, right m2 - mean
+        m1 = sumB / q1
+        m2 = (sumA - sumB) / q2
+        #inter-class variance
+        varBetween = float(q1) * float(q2) * (m1 - m2) * (m1 - m2)
+        if varBetween > varMax:
+            varMax = varBetween
             threshold = i
     return threshold
 
@@ -100,6 +103,7 @@ for i in range(len(img)):
 
 plt.imshow(img,cmap='gray',vmin=0,vmax=255)
 plt.show()
+
 ```
 ---
 
