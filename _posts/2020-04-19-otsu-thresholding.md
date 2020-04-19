@@ -2,8 +2,8 @@
 layout: post
 title: "Otsu's Method 구현하기"
 description: Otsu's Method 구현하기
-# tags: Algorithm
-date: 2020-04-09 10:26:00
+tags: Algorithm
+date: 2020-04-19 20:22:04
 comments: true
 ---
 
@@ -16,7 +16,7 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 
 ![](https://github.com/msc9533/msc9533.github.io/raw/master/_files/otsu_test.jpg){: width="200" height="200"}  
 
-- [원본이미지](https://github.com/msc9533/msc9533.github.io/raw/master/_files/otsu_test.jpg)
+- [원본이미지 다운로드](https://github.com/msc9533/msc9533.github.io/raw/master/_files/otsu_test.jpg)
 
 위 이미지에서 물체가 있는 픽셀을 구분 하는 예제입니다. 이하 이미지는 grayscale을 가정하겠습니다. 이미지의 픽셀의 값은 byte단위의 숫자, 즉 0-255의 값을 가집니다. 이 픽셀값의 분포를 그래프로 나타낸 것을 Histogram이라고 합니다. 예의 이미지의 히스토그램은 다음과 같습니다.  
 
@@ -31,36 +31,41 @@ Otsu method는 1979년 Nobuyuki Otsu가 발표한 논문에 실려있는 방법�
 
 ### Algorithm
 
-Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. Otsu method에서는 이것을 between-class variance가 최대가 되는 지점이라고 정의합니다.  
+Otsu method는 histogram에서 적절한 임계값을 선택하는 방법입니다. Otsu method에서는 이것을 between-class variance($\sigma^2_B$)가 최대가 되는 지점이라고 정의합니다.class 를 0 또는 1로 나누었을때 판별분석을 이용해 between-class variance와 within-class variance($\sigma^2_W$)는 다음과 같이 나타낼 수 있습니다.
 
 $$
-\sigma^2_W + \sigma^2_B = \sigma^2_T \tag{1}
+\sigma^2_W = \omega_0 \sigma^2_0 + \omega_1 \sigma^2_1 \\
+\sigma^2_B = \omega_0 \omega_1 (\mu_1 - \mu_0)^2
 $$
 
-이미지를 threshold k 를 기준으로W,B로 나누었을때 W로 나뉠 확률을 $\omega_W$, B는 $\omega_B$라고 할 때, 나뉜 클래스의 평균값$\mu$은 조건부 확률이므로 전체 픽셀의 수 $L$에 대해 다음과 같이 계산할 수 있습니다.
+여기서 각각의 $\omega$는 확률, 즉 threshold($k$) 기준으로 나뉜 픽셀의 수 / 전체 픽셀의 수 ($N$)으로 구할 수 있고, 각 클래스의 mean은 조건부 확률이므로 
 
 $$
-\mu_W = \sum_{i=1}^k iP_i / \omega_W , 
-\mu_B = \sum_{i=k+1}^L iP_i / \omega_B \tag{2}
+\mu_0 = \sum_{i=1}^k ip_i / \omega_0 \\
+\mu_1 = \sum_{i=k+1}^N ip_i / \omega_1
 $$
 
-여기서 전체 확률의 합 $\omega_W + \omega_B = 1$이므로 
+와 같이 구할 수 있습니다. 
+
 <!-- 직접구현 cpp? python? -->
 <!-- 파생 알고리즘은 뭐가 있는지 -->
 ### 구현
+
+threshold ($k$)를 모든 값에 대해 계산해 가장 높은 값을 찾는 방법으로 구현됩니다. 여기서 확률 w0,w1에 대해 w0 + w1 = 1입니다. 또한 w0,w1 둘중 하나라도 0일 경우는 어느 한쪽에 모두 포함 되는 경우이므로 제외합니다.
 
 ```py
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
-
+# 원본 이미지 확인
 img = np.array(Image.open('test.bmp').convert('L'))
 plt.imshow(img,cmap='gray',vmin=0,vmax=255)
-# plt.show()
+plt.show()
+
 histo = []
 def otsu(arg):
     # 입력 이미지의 픽셀수
-    N = len(arg)*len(arg[0]) # number of pixels
+    N = len(arg)*len(arg[0])
     # 히스토그램
     histogram = [0]*256
     for line in arg:
@@ -68,26 +73,29 @@ def otsu(arg):
             histogram[pixel] = histogram[pixel] + 1
 
     threshold = 0
-    sumA = 0.0
+    sumTotal = 0.0 
     sumB = 0.0
-    q1 = 0
-    q2 = 0
+    w0 = 0
+    w1 = 0
     varMax = 0.0
     # 전체 weighted sum calculation
     for i in range(len(histogram)):
-        sumA += i*histogram[i]
+        sumTotal += i*histogram[i]
     
     for i in range(len(histogram)):
-        q1 += histogram[i] #wF
-        q2 = N - q1 #wB
-        if q1 == 0 or q2 == 0:
+        w0 += histogram[i]
+        w1 = N - w0
+        if w0 == 0:
             continue
+        if w1 == 0:
+            break
+        # sigma_(i=1 to k) i*p_i
         sumB += float(i*histogram[i])
         # calc left m1, right m2 - mean
-        m1 = sumB / q1
-        m2 = (sumA - sumB) / q2
+        m1 = sumB / w0
+        m2 = (sumTotal - sumB) / w1
         #inter-class variance
-        varBetween = float(q1) * float(q2) * (m1 - m2) * (m1 - m2)
+        varBetween = float(w0) * float(w1) * (m1 - m2) * (m1 - m2)
         if varBetween > varMax:
             varMax = varBetween
             threshold = i
@@ -103,8 +111,12 @@ for i in range(len(img)):
 
 plt.imshow(img,cmap='gray',vmin=0,vmax=255)
 plt.show()
-
 ```
+
+### 결과화면
+
+![img](https://i.imgur.com/ApdjKRk.png)
+
 ---
 
 <details>
