@@ -94,7 +94,7 @@ def otsu(arg):
         # calc left m1, right m2 - mean
         m1 = sumB / w0
         m2 = (sumTotal - sumB) / w1
-        #inter-class variance
+        #between-class variance
         varBetween = float(w0) * float(w1) * (m1 - m2) * (m1 - m2)
         if varBetween > varMax:
             varMax = varBetween
