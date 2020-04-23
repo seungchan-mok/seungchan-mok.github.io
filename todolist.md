@@ -12,10 +12,10 @@
 
 - cmake list의 구조
 - break point debug설정 qtcreator, vscode
-- tf broad cast + encoder odom
 - launch file 작성
 - bash shell script
 - ros service
+- ROS2?
 
 ### SLAM
 
@@ -28,16 +28,24 @@
 - back propagation
 - pytorch tutorials
 - 딥러닝책
-- k-mean clustering
 - Hierarchical clustering
 
 ### Algorithm
 
-- RANSAC matching
 - Dijkstra, A-star,Hybrid a-star algorithm
-- otzu thresholding
 - rrt star
 - k-means clustering
+- icp matching
+- Kalman filtering
+- EKF, UKF
+- PF
+- LSTM
+- PCA
+
+### Paper
+
+- Pointnet, Pointnet++
+- GAN
 
 ### ETC
 
