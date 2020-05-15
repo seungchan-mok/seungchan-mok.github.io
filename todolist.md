@@ -32,7 +32,6 @@
 
 ### Algorithm
 
-- Dijkstra, A-star,Hybrid a-star algorithm
 - rrt star
 - k-means clustering
 - icp matching
