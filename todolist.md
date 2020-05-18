@@ -10,12 +10,10 @@
 
 ### ROS
 
-- cmake list의 구조
 - break point debug설정 qtcreator, vscode
 - launch file 작성
 - bash shell script
 - ros service
-- ROS2?
 
 ### SLAM
 
