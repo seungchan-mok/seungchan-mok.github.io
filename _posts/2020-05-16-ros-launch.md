@@ -14,7 +14,7 @@ ROS는 node단위로 파일을 실행시키거나 rosparam과 같이 개별적�
 <!-- 런치파일의 장점 -->
 ## Multiple Node
 
-
+rosrun 으로 실행시키는 노드들을 한번에 launch파일로 작성할때는 다음과 같이 작성합니다.
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
 <!-- param, arg -->
