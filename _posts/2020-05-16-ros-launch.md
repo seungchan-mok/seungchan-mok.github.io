@@ -14,7 +14,23 @@ ROS는 node단위로 파일을 실행시키거나 rosparam과 같이 개별적�
 <!-- 런치파일의 장점 -->
 ## Multiple Node
 
-rosrun 으로 실행시키는 노드들을 한번에 launch파일로 작성할때는 다음과 같이 작성합니다.
+rosrun 으로 실행시키는 노드들을 한번에 launch파일로 작성할때는 다음과 같이 작성합니다.  
+launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 필요는 없습니다. 이때 실행되는 node들은 `devel/setup.sh`에서 package의 path가 source되어야 합니다.(한 터미널에서 모두 실행시킬 수 있는 상태여야 합니다.)
+
+```xml
+<launch>
+  <node name="turtlesim_node" pkg="turtlesim"  type="turtlesim_node" respawn="true" />
+  <node name="turtle_teleop_key_node" pkg="turtlesim" type="turtle_teleop_key" output="screen" />
+</launch>
+```
+
+`<node name="NODE_NAME" pkg="PACKAGE" type="NODE" />`의 형식으로 작성합니다. 만약 패키지를 실행시키는 rosrun command가 `rosrun turtlesim turtlesim_node`라면 `<node name="NODE_NAME" pkg="turtlesim" type="turtlesim_node" />` 같이 작성합니다. node name은 이미 실행되고 있는 이름이 아니라면 무관합니다.  
+
+또한 다른 옵션들을 줄 수 있습니다.
+- `respawn="true/false"` : node가 종료 되었을때 다시 실행시키는 옵션입니다.
+- `output="screen"` : 기본적으로 launch를 실행하면 rosrun과는 달리 출력이 보이지 않습니다. 이 출력을 활성화하는 옵션입니다.
+- `args="x y z ...."` : node가 argument를 필요로 하는 경우 작성합니다.
+
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
 <!-- param, arg -->
