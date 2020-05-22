@@ -34,7 +34,19 @@ launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 �
 ## Group nodes
 
 ```xml
+<launch>
+    <group ns="group1">
+        <node name="turtlesim_node" pkg="turtlesim"  type="turtlesim_node" respawn="true" />
+        <node name="turtle_teleop_key_node" pkg="turtlesim" type="turtle_teleop_key" output="screen" />
+    </group>
+    <group ns="group1">
+        <node name="turtlesim_node" pkg="turtlesim"  type="turtlesim_node" respawn="true" />
+        <node name="turtle_teleop_key_node" pkg="turtlesim" type="turtle_teleop_key" output="screen" />
+    </group>
+</launch>
 ```
+
+`<group>`태그는 node를 그룹으로 실행시킬때 사용하는 태그입니다.
 
 ## Include other launch, arguments, param
 
