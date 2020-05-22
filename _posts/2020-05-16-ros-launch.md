@@ -31,6 +31,11 @@ launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 �
 - `output="screen"` : 기본적으로 launch를 실행하면 rosrun과는 달리 출력이 보이지 않습니다. 이 출력을 활성화하는 옵션입니다.
 - `args="x y z ...."` : node가 argument를 필요로 하는 경우 작성합니다.
 
+## Group nodes
+
+## Include other launch, arguments, param
+
+
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
 <!-- param, arg -->
