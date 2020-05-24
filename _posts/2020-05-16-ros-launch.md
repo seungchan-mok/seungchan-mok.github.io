@@ -39,14 +39,17 @@ launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 �
         <node name="turtlesim_node" pkg="turtlesim"  type="turtlesim_node" respawn="true" />
         <node name="turtle_teleop_key_node" pkg="turtlesim" type="turtle_teleop_key" output="screen" />
     </group>
-    <group ns="group1">
+    <group ns="group2">
         <node name="turtlesim_node" pkg="turtlesim"  type="turtlesim_node" respawn="true" />
         <node name="turtle_teleop_key_node" pkg="turtlesim" type="turtle_teleop_key" output="screen" />
     </group>
 </launch>
 ```
 
-`<group>`태그는 node를 그룹으로 실행시킬때 사용하는 태그입니다.
+`<group>`태그는 node를 그룹으로 실행시킬때 사용하는 태그입니다.  
+위와 같은 launch를 실행하면 그룹으로 묶여 node가 실행됩니다. 이때 node의 이름은 /group_name/node_name 으로 생성됩니다. topic도 마찬가지로 /group_name/topic으로 생성됩니다. 아래는 rqt_graph로 node를 확인한 결과입니다.
+
+![Imgur](https://i.imgur.com/F0ebMdP.png)
 
 ## Include other launch, arguments, param
 
