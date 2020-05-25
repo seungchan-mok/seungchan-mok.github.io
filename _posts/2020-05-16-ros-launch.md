@@ -53,6 +53,8 @@ launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 �
 
 ## Include other launch, arguments, param
 
+launch에서 다른 launch file을 포함하거나, arguments,param등도 이용가능합니다.
+
 
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
