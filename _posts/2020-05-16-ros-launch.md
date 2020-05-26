@@ -55,6 +55,21 @@ launch파일이 pkg에 포함되는것이 일반적이지만 굳이 포함할 �
 
 launch에서 다른 launch file을 포함하거나, arguments,param등도 이용가능합니다.
 
+```xml
+<launch>
+<!-- 다른 launch 포함 -->
+<include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+  </include>
+<!-- arguments -->
+<arg name="arg" default="10" />
+<arg name="model" default="RobotA" doc="type your robot[RobotA, RobotB, RobotC]"/>
+<!-- 직접 rosparam setting -->
+<param name="use_sim_time" value="true" />
+<!-- yaml 파일로 부터 rosparam 불러오기 -->
+<rosparam file="$(find local_map_builder)/config/config.yaml" />
+</launch>
+```
+
 
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
