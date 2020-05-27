@@ -2,8 +2,8 @@
 layout: post
 title: "ROS launch파일 작성하기"
 description: ROS launch파일 작성하기
-# tags: ROS
-date: 2020-05-14 11:15:15
+tags: ROS
+date: 2020-05-27 10:38:08
 comments: true
 ---
 
@@ -70,6 +70,8 @@ launch에서 다른 launch file을 포함하거나, arguments,param등도 이용
 </launch>
 ```
 
+여기서 `$(find package)`는 현재 source되어 있는 `devel/setup.sh`에서 실행가능한 package의 경로를 찾아줍니다. `arg`는 launch를 실행시킬때 뒤에 `arg:=12`와 같이 arguments를 설정할 수 있습니다.  
+`param`은 rosparam을 직접 설정하는 명령어이고, yaml file로 여러개의 rosparam을 한번에 설정할 수도 있습니다.
 
 <!-- node실행시키기 - respawn screen 등등 -->
 <!-- launch 포함시키기 -->
