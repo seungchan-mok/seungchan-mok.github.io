@@ -38,6 +38,7 @@
 - PF
 - LSTM
 - PCA
+- voxel filtering
 
 ### Paper
 
