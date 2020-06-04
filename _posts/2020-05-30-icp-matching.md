@@ -9,6 +9,8 @@ comments: true
 
 <!-- icp매칭이란? -->
 ICP는 두 point cloud집합의 차이를 최소화 하는 알고리즘입니다. 
+  
+![Imgur](https://i.imgur.com/JVSCQ7P.png)
 <!-- 구현코드 -->
 <!-- 장단점 -->
 <!-- 비슷한알고리즘 -->
