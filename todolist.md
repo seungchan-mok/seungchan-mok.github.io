@@ -40,6 +40,7 @@
 - PCA
 - voxel filtering
 - Transform estimation
+- graph optimization
 
 ### Paper
 
