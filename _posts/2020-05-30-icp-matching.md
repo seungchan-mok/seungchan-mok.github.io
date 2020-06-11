@@ -22,6 +22,7 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 <div markdown="1">
 
 - [ICP( Iterative Closest Point )](https://m.blog.naver.com/tlaja/220666876033)
+- [Iterative_closest_point - wiki](https://en.wikipedia.org/wiki/Iterative_closest_point)
 
 </div>
 </details>
