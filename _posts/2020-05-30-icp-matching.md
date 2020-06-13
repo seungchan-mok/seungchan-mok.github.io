@@ -20,6 +20,8 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 4. source pointcloud를 추정한 행렬로 변환
 5. 반복
 
+위 알고리즘이 반복되면서 점점 최대로 일치하는 변환 행렬에 가까워져 가는 방식으로 실행됩니다.
+
 <!-- 구현코드 -->
 
 <!-- 장단점 -->
