@@ -6,8 +6,6 @@
 
 ## post
 
-### jekyll
-
 ### ROS
 
 - break point debug설정 qtcreator, vscode
