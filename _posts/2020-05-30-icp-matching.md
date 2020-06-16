@@ -26,6 +26,10 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 
 먼저 python에서 sci-kit learn을 이용해 간단히 구현해 보겠습니다.
 
+<!-- skleran code -->
+```py
+```
+
 ## Algorithm
 
 위에 서술한 알고리즘의 순서대로의 설명 및 구현입니다.
