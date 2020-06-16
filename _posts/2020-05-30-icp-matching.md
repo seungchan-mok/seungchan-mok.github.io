@@ -22,6 +22,10 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 
 위 알고리즘이 반복되면서 점점 최대로 일치하는 변환 행렬에 가까워져 가는 방식으로 실행됩니다.
 
+## Simple implementation with python sklearn
+
+먼저 python에서 sci-kit learn을 이용해 간단히 구현해 보겠습니다.
+
 ## Algorithm
 
 위에 서술한 알고리즘의 순서대로의 설명 및 구현입니다.
@@ -43,6 +47,7 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 
 - [ICP( Iterative Closest Point )](https://m.blog.naver.com/tlaja/220666876033)
 - [Iterative_closest_point - wiki](https://en.wikipedia.org/wiki/Iterative_closest_point)
+- [Iterative Closest Point (ICP) implementation on python - stack overflow](https://stackoverflow.com/questions/20120384/iterative-closest-point-icp-implementation-on-python)
 
 </div>
 </details>
