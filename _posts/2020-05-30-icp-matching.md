@@ -54,6 +54,8 @@ if __name__ == "__main__":
 ## C++구현
 
 ```cpp
+#include <iostream>
+#include <vector>
 ```
 <!-- 장단점 -->
 <!-- 비슷한알고리즘 -->
