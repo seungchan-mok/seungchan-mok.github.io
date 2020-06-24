@@ -33,7 +33,13 @@ import sys
 import random
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
-def euclidean():
+
+def getRandomPCL(numPoints):
+    sequence = np.arange(0,10,float(10)/numPoints)
+    
+    return pcl1,pcl2
+
+def getEuclidean():
     print()
 
 def icp():
