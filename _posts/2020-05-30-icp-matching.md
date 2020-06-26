@@ -29,23 +29,7 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 <!-- skleran code -->
 <!-- python 구현중 -->
 ```py
-import sys
-import random
-import numpy as np
-from sklearn.neighbors import NearestNeighbors
 
-def getRandomPCL(numPoints):
-    sequence = np.arange(0,10,float(10)/numPoints)
-    
-    return pcl1,pcl2
-
-def getEuclidean():
-    print()
-
-def icp():
-    print()
-if __name__ == "__main__":
-    main()
 ```
 
 ## Algorithm
@@ -62,6 +46,11 @@ if __name__ == "__main__":
 ```cpp
 #include <iostream>
 #include <vector>
+
+int main()
+{
+    
+}
 ```
 <!-- 장단점 -->
 <!-- 비슷한알고리즘 -->
