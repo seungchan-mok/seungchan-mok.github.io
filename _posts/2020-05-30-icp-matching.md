@@ -49,11 +49,12 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 
 int main()
 {
-    
+
 }
 ```
 <!-- 장단점 -->
 <!-- 비슷한알고리즘 -->
+
 
 ---
 
