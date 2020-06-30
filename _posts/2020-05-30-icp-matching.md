@@ -32,13 +32,26 @@ Iterative Closest Point(ICP)는 두 point cloud집합의 차이를 최소화 하
 import sys
 import random
 import numpy as np
+from math import pi,sin,cos
 from sklearn.neighbors import NearestNeighbors
 def euclidean():
     print()
 
+def getRandomTransform():
+    theta = random.random()*2.0*pi
+    x = random.random()*10.0
+    y = random.random()*20.0
+    return np.array([[cos(theta),-sin(theta),x],
+                    [sin(theta),cos(theta),y],
+                    [0,0,1]])
+
 def getSamplePoints(start,end,num):
-    src = np.arange(start,end,num)
-    
+    src_x = np.arange(start,end,num)
+    src_y = np.sin(src_x)
+    ones = np.ones(len(src_x))
+    src = np.stack((src_x,src_y,ones))
+    dst = getRandomTransform*src
+    return src,dst    
 
 def icp():
     print()
