@@ -53,6 +53,6 @@ kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: true
 
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-05-30-icp-matching.md']
+exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-05-30-icp-matching.md','_posts/2020-07-03-knn.md']
 
 # exclude: ['README.md', 'LICENSE', 'todolist.md']

@@ -2,7 +2,7 @@
 layout: post
 title: "Iterative Closest Point(ICP) 구현하기"
 description: Iterative Closest Point(ICP) 구현하기
-#tags: ROS
+#tags: Algorithm
 date: 2020-05-27 10:38:08
 comments: true
 ---
