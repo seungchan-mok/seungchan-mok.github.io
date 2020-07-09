@@ -19,6 +19,11 @@
                       {% endfor %}
                     </ul>
                   </div>
+                  <div style="text-align: center;">
+                    <a href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}" target="_blank">
+                      <img src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
+                    </a>
+                    </div> 
                   <div class="post-content">
                     {% if page.toc %}
                       {% include toc.html html=content class='toc' %}
