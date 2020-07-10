@@ -28,7 +28,6 @@
 
 ### Algorithm
 
-- rrt star
 - k-means clustering
 - icp matching
 - Kalman filtering
