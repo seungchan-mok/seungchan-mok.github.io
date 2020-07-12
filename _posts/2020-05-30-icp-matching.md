@@ -107,7 +107,13 @@ def getSamplePoints(start,end,step,addNoise=True):
         src_temp = src_temp + noise
     dst = np.matmul(getRandomTransform(),src_temp)
     return src,dst    
+def extractSamplePoints():
+    print()
 
+def getClosestPoints():
+    print()
+    return closest
+    
 def icp():
     src, dst = getSamplePoints(0,10,0.1)
     print(src)
