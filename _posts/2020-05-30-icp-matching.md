@@ -161,6 +161,7 @@ int main()
 - [ICP( Iterative Closest Point )](https://m.blog.naver.com/tlaja/220666876033)
 - [Iterative_closest_point - wiki](https://en.wikipedia.org/wiki/Iterative_closest_point)
 - [Iterative Closest Point (ICP) implementation on python - stack overflow](https://stackoverflow.com/questions/20120384/iterative-closest-point-icp-implementation-on-python)
+- [ICP-mini-project](https://github.com/zjudmd1015/icp)
 
 </div>
 </details>
