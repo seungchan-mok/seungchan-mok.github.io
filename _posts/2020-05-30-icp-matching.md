@@ -143,6 +143,9 @@ if __name__ == "__main__":
 #include <iostream>
 #include <vector>
 
+class Transform{
+
+};
 int main()
 {
 
