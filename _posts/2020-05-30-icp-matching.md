@@ -143,8 +143,21 @@ if __name__ == "__main__":
 #include <iostream>
 #include <vector>
 
-class Transform{
+class Translation{
 
+};
+
+class Rotation{
+
+};
+
+class Transform{
+    Transform()
+    {
+
+    }
+    Translation trans;
+    Rotation rotate;
 };
 int main()
 {
