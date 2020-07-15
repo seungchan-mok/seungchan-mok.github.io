@@ -9,7 +9,6 @@
 ### ROS
 
 - break point debug설정 qtcreator, vscode
-- launch file 작성
 - bash shell script
 - ros service
 
@@ -22,7 +21,12 @@
 
 - 서버구축하기
 - back propagation
-- pytorch tutorials
+- batch normalization
+- 활성화함수 정리
+- 최적화함수 정리
+- CycleGAN
+- DCGAN
+- SimGAN
 - 딥러닝책
 - Hierarchical clustering
 
