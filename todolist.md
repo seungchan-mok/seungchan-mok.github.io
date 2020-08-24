@@ -32,7 +32,6 @@
 
 ### Algorithm
 
-- k-means clustering
 - icp matching
 - Kalman filtering
 - EKF, UKF
