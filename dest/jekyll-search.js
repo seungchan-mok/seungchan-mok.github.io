@@ -335,6 +335,7 @@
         options.searchInput.addEventListener('keyup', function(e){
             emptyResultsContainer();
             var key = e.which
+            alert(key);
             var query = e.target.value
             query = query.replace(/\s+$/g, ""); //del right null
             if( isWhitelistedKey(key) && isValidQuery(query) ) {
