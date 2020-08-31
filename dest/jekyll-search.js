@@ -331,7 +331,8 @@
       }
     
       function registerInput(){
-        options.searchInput.addEventListener('keyup', function(e){
+        // options.searchInput.addEventListener('keyup', function(e){
+        options.searchInput.addEventListener('keypress', function(e){
           emptyResultsContainer();
           var key = e.which
           var query = e.target.value
