@@ -340,15 +340,6 @@
             if( isWhitelistedKey(key) && isValidQuery(query) ) {
                 render( repository.search(query) );
             }
-            })
-        options.searchInput.addEventListener('keypress', function(e){
-          emptyResultsContainer();
-          var key = e.which
-          var query = e.target.value
-          query = query.replace(/\s+$/g, ""); //del right null
-          if( isWhitelistedKey(key) && isValidQuery(query) ) {
-            render( repository.search(query) );
-          }
         })
       }
     
