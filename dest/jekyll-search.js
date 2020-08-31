@@ -335,7 +335,7 @@
         options.searchInput.addEventListener('keyup', function(e){
             emptyResultsContainer();
             var key = e.which
-            alert(key);
+            // alert(key);
             var query = e.target.value
             query = query.replace(/\s+$/g, ""); //del right null
             if( isWhitelistedKey(key) && isValidQuery(query) ) {
@@ -358,7 +358,7 @@
       }
     
       function isWhitelistedKey(key) {
-        return [13,16,20,37,38,39,40,91].indexOf(key) === -1
+        return [16,20,38,40,91].indexOf(key) === -1
       }
     
       function throwError(message){ throw new Error('SimpleJekyllSearch --- '+ message) }
