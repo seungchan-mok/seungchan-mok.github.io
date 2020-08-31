@@ -22,6 +22,11 @@ layout: null
         {%- assign has_excluded_taxonomy = true -%}
       {%- endif -%}
     {%- endfor -%}
+    {%- for title in post.titles -%}
+      {%- if excluded_taxonomies contains title -%}
+        {%- assign has_excluded_taxonomy = true -%}
+      {%- endif -%}
+    {%- endfor -%}
     {%- unless has_excluded_taxonomy == true -%}
       {%- assign index = index | push: post | uniq -%}
     {%- endunless -%}
