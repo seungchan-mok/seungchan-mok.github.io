@@ -18,13 +18,11 @@
     {% endfor %}
   </ul>
 </div>
+<!-- HTML elements for search -->
 <div class="sidebar">
-<form action="/search">
-  <div class="tipue_search_left">
-    <img src="/assets/tipuesearch/search.png" class="tipue_search_icon">
-  </div>
-  <div class="tipue_search_right">
-    <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="1글자 이상 입력하세요" required></div>
-  <div style="clear: both;"></div>
-</form>
+<input type="text" id="search-input" placeholder="Search blog posts..">
+<ul id="results-container"></ul>
+
+<!-- or without installing anything -->
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 </div>
