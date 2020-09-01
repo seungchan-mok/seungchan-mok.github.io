@@ -42,10 +42,18 @@
 - Transform estimation
 - graph optimization
 
+### Project
+
+- scratch slam
+
 ### Paper
 
 - Pointnet, Pointnet++
 - GAN
+- pointcloud feature survey
+- ORB slam
+- LOAM
+- ECCV 2020
 
 ### ETC
 
