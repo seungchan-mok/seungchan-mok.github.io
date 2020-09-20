@@ -2,14 +2,15 @@
 layout: post
 title: "Camera-LiDAR Projection 구현하기"
 description: Camera-LiDAR Projection 구현하기
-tags: Algorithm
+# tags: Algorithm
 date: 2020-08-21 11:04:25
 comments: true
 ---
 
 ## Camera intrinsic parameter
 
-
+<!-- pinhole model -->
+<!-- 3d lidar point to camera pixel -->
 
 ---
 
