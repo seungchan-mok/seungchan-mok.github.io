@@ -12,6 +12,8 @@ comments: true
 <!-- pinhole model -->
 <!-- 3d lidar point to camera pixel -->
 
+## 3D points to pixel
+
 ---
 
 <details>
