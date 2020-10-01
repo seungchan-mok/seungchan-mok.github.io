@@ -22,6 +22,7 @@ comments: true
 
 - [Camera-Lidar Projection: Navigating between 2D and 3D](https://medium.com/swlh/camera-lidar-projection-navigating-between-2d-and-3d-911c78167a94)
 - [카메라 캘리브레이션 - 다크프로그래머](https://darkpgmr.tistory.com/32)
+- [How project Velodyne point clouds on image? (KITTI Dataset)](https://stackoverflow.com/questions/39104666/how-project-velodyne-point-clouds-on-image-kitti-dataset)
 
 </div>
 </details>
