@@ -7,7 +7,9 @@ date: 2020-08-21 11:04:25
 comments: true
 ---
 
-## Camera intrinsic parameter
+## Pinhole Camera Model
+
+핀홀 카메라 모델에서 3차원 공간상의 점들은 이미지 평면에 투사되어 이미지로 나타나게 됩니다.
 
 <!-- pinhole model -->
 <!-- 3d lidar point to camera pixel -->
