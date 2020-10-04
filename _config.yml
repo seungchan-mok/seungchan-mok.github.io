@@ -52,6 +52,7 @@ markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
+incremental: false
 
 exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-05-30-icp-matching.md','_posts/2020-09-04-cam-lidar-projection.md']
 
