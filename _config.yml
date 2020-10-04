@@ -49,7 +49,6 @@ permalink: /:year/:month/:title/
 #highlighter: rouge
 
 markdown: kramdown
-highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
