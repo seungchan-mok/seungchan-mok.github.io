@@ -19,11 +19,12 @@ $$
 \begin{bmatrix} u \\ v \\ 1 \end{bmatrix}= \begin{bmatrix} f_x && s_x && c_x \\ 0 && f_y && c_y \\ 0 && 0 && 1 \end{bmatrix} \begin{bmatrix} R | t \end{bmatrix} \begin{bmatrix} x \\ y \\ z \\ 1 \end{bmatrix}
 $$
 
-
 <!-- pinhole model -->
 <!-- 3d lidar point to camera pixel -->
 
 ## 3D points to pixel
+
+ 같
 
 ---
 
