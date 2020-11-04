@@ -49,6 +49,7 @@ fs["camera_matrix"] >> intrinsics;
 fs["distortion_coefficients"] >> distortion;
 ```
 
+## Extrinsic parameter
 <!-- pinhole model -->
 <!-- 3d lidar point to camera pixel -->
 
