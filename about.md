@@ -18,7 +18,7 @@ title: About
   /* Title of the resume */
   h1 {
       font-size: 55px;
-      color: #757575;
+      color: #FFFFFF;
       text-align:center;
       margin-bottom:15px;
   }
