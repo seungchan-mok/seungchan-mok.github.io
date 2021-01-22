@@ -1,11 +1,7 @@
-<style type="text/css">
-h2 {
-      color: #7fff58;
-  }
-</style>
+
 
 <div class="sidebar ">
-  <h2>Recent Posts</h2>
+  <h3>Recent Posts</h3>
   <ul>
     {% for post in site.posts limit:10 %}
     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
@@ -14,7 +10,7 @@ h2 {
 </div>
 
 <div class="sidebar">
-  <h2>Tags</h2>
+  <h3>Tags</h3>
   <ul class="sideBarTags">
     {% assign tags = (site.tags | sort:0) %}
     {% for tag in tags %}

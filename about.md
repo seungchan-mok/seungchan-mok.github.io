@@ -86,54 +86,41 @@ E-mail : msc9533@gmail.com
 
 ---
 
-<h2>
-<span style="color:#757575">
-Education
-</span>
-</h2>
-
----
-
+## Education
 
 <dl>
-<dt>201-2014 (expected)</dt>
-<dd><p><strong>PhD, Computer Science</strong>; Awesome University (MyTown)</p>
-<p><em>Thesis title: Deep Learning Approaches to the Self-Awesomeness Estimation Problem</em></p>
+<dt>
+2014 - 
+</dt>
+<dd><p><strong>
+MS, Intelligent Robotics Laboratory(IRL), Department of Control and Robot Engineering
+</strong>; 
+Chungbuk National University (Cheongju, Korea)
+</p>
+<!-- <p><em>Thesis title: Deep Learning Approaches to the Self-Awesomeness Estimation Problem</em></p> -->
 </dd>
+
+
 <dt>2014-2020</dt>
-<dd><p><strong> Electric Engineering</strong>; Chungbuk National University</p>
-<p><em>Minor: Awesomeology</em></p>
+<dd><p><strong> BSc, Department of Electric Engineering</strong>; 
+Chungbuk National University (Cheongju, Korea)</p>
+<p><em>Minor: Smart-car Engineering</em></p>
 </dd>
 </dl>
 
 
 ## Research Interest
 
----
+- Simultaneous Localization And Mapping (SLAM)
+- Generative Advesarial Network (GAN)
 
 ## International Conferences
 
----
 
 ## Domestic Conferences
 
----
 
 ## Research Experiences
 
-<p><strong>Your Most Recent Work Experience:</strong></p>
-<p>Short text containing the type of work done, results obtained, lessons learned and other remarks. Can also include lists and links:</p>
-<ul>
-<li><p>First item</p></li>
-<li><p>Item with <a href="http://www.example.com">link</a>. Links will work both in the html and pdf versions.</p></li>
-</ul>
-<p><strong>That Other Job You Had</strong></p>
-<p>Also with a short description.</p>
-
----
 
 ## Awards and Honors
-
----
-
-- 
