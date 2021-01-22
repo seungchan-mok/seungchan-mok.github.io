@@ -14,14 +14,6 @@ title: About
    *       * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
    *        */
   
-  /* Whole document */
-  body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      width: 800px;
-      margin: auto;
-      background: #FFFFFF;
-      padding: 10px 10px 10px 10px;
-  }
   
   /* Title of the resume */
   h1 {
