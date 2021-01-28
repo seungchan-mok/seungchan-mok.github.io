@@ -82,7 +82,8 @@ E-mail : msc9533@gmail.com
 
 - Birth : 30 Mar, 1995, in Republic of Korea
 - Nationality : Korean
-- Language : First language Korean, 
+- Language : Korean(Native), English(Conversant)
+- Skills : C++, Python, ROS, Tensorflow, Pytorch
 
 ---
 
