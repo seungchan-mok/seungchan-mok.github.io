@@ -79,6 +79,9 @@ title: About
 <h1 id="Seung-Chan Mok">Seungchan Mok</h1>
 
 E-mail : msc9533@gmail.com
+Github : [msc9533](https://github.com/msc9533)
+
+---
 
 - Birth : 30 Mar, 1995, in Republic of Korea
 - Nationality : Korean
