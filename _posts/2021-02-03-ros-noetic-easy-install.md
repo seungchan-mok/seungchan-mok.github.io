@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ROS Noetic 한 줄 설치"
-description: Google chrome 깔끔한 북마크바 사용하기
+description: ROS Noetic 한 줄 설치
 tags: ROS
 date: 2021-02-03 13:59:14
 comments: true
