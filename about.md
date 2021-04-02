@@ -120,6 +120,7 @@ Chungbuk National University (Cheongju, Korea)</p>
 
 ## International Conferences
 
+- Mok, Seung-chan, and Gon-woo Kim. "Simulated Intensity Rendering of 3D LiDAR using Generative Adversarial Network." 2021 IEEE International Conference on Big Data and Smart Computing (BigComp). IEEE, 2021.
 - S. Mok, et al. "Adaptive Threshold Selection Method based on Sliding Window for LiDAR Road Marker Detection", 2020 17th International Conference on Ubiquitous Robots (UR). IEEE, 2020. 
 
 ## Domestic Conferences
