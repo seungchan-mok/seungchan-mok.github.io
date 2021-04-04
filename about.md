@@ -132,4 +132,4 @@ Chungbuk National University (Cheongju, Korea)</p>
 
 ## Awards and Honors
 
-- Grand Prize in Autonomous Driving 2020 [International Student Car Competition](http://www.kasa.kr/cev/index.php).
+- Grand Prize in Autonomous Driving 2019 [International Student Car Competition](http://www.kasa.kr/cev/index.php).
