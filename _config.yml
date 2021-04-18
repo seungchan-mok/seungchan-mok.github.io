@@ -54,7 +54,13 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-exclude: ['README.md', 'LICENSE', 'todolist.md','_posts/2020-05-30-icp-matching.md','_posts/2020-09-04-cam-lidar-projection.md']
+exclude: ['README.md', 
+          'LICENSE', 
+          'todolist.md',
+          '_posts/2020-05-30-icp-matching.md',
+          '_posts/2020-09-04-cam-lidar-projection.md',
+          '_posts/2021-02-03-remote-set-vscode-ssh-docker-jupyter.md',
+          '_posts/2021-04-09-titanic-knn-tutorial.md']
 
 tipue_search:
   include:
