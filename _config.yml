@@ -59,7 +59,6 @@ exclude: ['README.md',
           'todolist.md',
           '_posts/2020-05-30-icp-matching.md',
           '_posts/2020-09-04-cam-lidar-projection.md',
-          '_posts/2021-04-20-remote-vscode-ssh.md',
           '_posts/2021-04-25-remote-vscode-docker.md',
           '_posts/2021-04-09-titanic-knn-tutorial.md']
 

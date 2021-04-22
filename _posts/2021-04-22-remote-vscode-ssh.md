@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Docker와 ssh를 이용한 원격 개발환경 세팅"
-description: vscode, ssh, docker를 이용한 원격 개발환경 구축에 대해 다룹니다.
+title: "vscode와 ssh를 이용한 원격 개발환경 세팅"
+description: vscode, ssh를 이용한 원격 개발환경 구축에 대해 다룹니다.
 tags: etc
-date: 2021-04-02 13:59:14
+date: 2021-04-22 17:26:32
 comments: true
 ---
 
@@ -45,7 +45,18 @@ Host MyHost # 서버의 별명
 
 ### Forward a port by vscode
 
+서버에서 port를 사용하는 경우 (ex. jupyter notebook) ssh를 이용해 포워딩을 하면 좀더 쉽게 이용을 할 수 있습니다. 터미널에서 명령어를 이용한 포워딩을 할 수 있지만 vscode에서도 지원하는 기능입니다. 주피터 노트북을 이용하는 경우를 예를 들겠습니다.  
 
+서버에서 `8888`번 포트를 이용하는 경우 `ctrl` or `cmd` +`shift + p` 로 명령어 팔레트를 열어준 뒤, `Forward a Port` 메뉴를 입력해 선택해 줍니다. 
+
+
+![img](https://i.imgur.com/PONCs2K.png)
+
+메뉴를 선택하면 다음과 같은 화면을 확인 할 수 있습니다. vscode내부에서 실행된 경우(터미널..) 자동으로 포트포워딩이 되며, `Add Port`를 이용해 직접 추가해 줄 수 있습니다.
+
+![img](https://i.imgur.com/QpJmRWz.png)
+
+포트포워딩이 끝나면, localhost포트로 포워딩이 되며, 이 경우 `http://localhost:8888`를 브라우저에서 접속하면 서버의 8888포트로 연결이 됩니다.
 
 <details>
 <summary>참고문서</summary>
@@ -54,7 +65,6 @@ Host MyHost # 서버의 별명
 - https://baked-corn.tistory.com/52
 - https://linuxize.com/post/using-the-ssh-config-file/#ssh-config-file-example
 - https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
-- 
 
 </div>
 </details>
