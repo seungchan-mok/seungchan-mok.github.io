@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "ROS Noetic 한 줄 설치"
-description: ROS Noetic 한 줄 설치
+title: "ROS Melodic 한 줄 설치"
+description: ROS Melodic 한 줄 설치
 tags: ROS
 date: 2021-06-17 10:34:27
 comments: true
@@ -9,7 +9,7 @@ comments: true
 
 # ROS melodic 한 줄 설치
 
-지난 [포스트](https://msc9533.github.io/2021/02/ros-noetic-easy-install)와 비슷한 한 줄 설치 스크립트입니다.
+지난 [포스트](https://msc9533.github.io/2021/02/ros-noetic-easy-install)와 비슷한 Melodic 한 줄 설치 스크립트입니다.
 터미널을 열고 아래 스크립트를 입력하면 됩니다.
 
 ```
