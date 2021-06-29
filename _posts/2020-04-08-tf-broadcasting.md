@@ -27,7 +27,7 @@ source devel/setup.sh
 이 키보드 입력을 받아 `odometry`를 publish 하는 node를 만들어 보겠습니다.
 
 ```bash
-catkin_create_pkg odom_pub rospy roscpp nav_msgs tf tf2 geometry_msgs move_base_msgsasd
+catkin_create_pkg odom_pub rospy roscpp nav_msgs tf tf2 geometry_msgs move_base_msgs
 
 cd odom_pub/src && touch odom_pub.py && chmod u+x odom_pub.py
 ```
