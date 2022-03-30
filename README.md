@@ -1,4 +1,4 @@
-# msc9533.github.io
+# seungchan-mok.github.io
 
-[blog](https://msc9533.github.io)
+[blog](https://seungchan-mok.github.io)
 
