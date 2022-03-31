@@ -4,7 +4,7 @@ name: mok 개발일지
 description: Software Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: https://msc9533.github.io
+url: https://seungchan-mok.github.io
 #url: http://localhost:4000
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
@@ -22,7 +22,7 @@ share:
   email: true
 
 social:
-  github: msc9533
+  github: seungchan-mok
   facebook: 'mok0000'
   linkedin:
   instagram: 'mok____'
