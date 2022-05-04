@@ -14,7 +14,7 @@ comments: true
 터미널을 열고 아래 스크립트를 입력하면 됩니다.
 
 ```
-sudo apt-get install -y wget && wget https://gist.githubusercontent.com/msc9533/25e32865c1e26b54aa845a94b83055da/raw/67350d7c4bdc69b6f81dc4500957053143b7bc34/ros-noetic-install.sh && chmod +x ros-noetic-install.sh && ./ros-noetic-install.sh
+sudo apt-get install -y wget && wget https://gist.githubusercontent.com/seungchan-mok/25e32865c1e26b54aa845a94b83055da/raw/67350d7c4bdc69b6f81dc4500957053143b7bc34/ros-noetic-install.sh && chmod +x ros-noetic-install.sh && ./ros-noetic-install.sh
 ```
 
 아주 간단한 패키지 [hello ros packge](https://github.com/msc9533/hello-ros-pkg) 를 `catkin_ws`에 만들어 빌드 테스트 하는 것 까지 되어 있습니다.  
