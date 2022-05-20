@@ -7,7 +7,7 @@ date: 2020-11-06 18:14:13
 comments: true
 ---
 
-# NIPA docker 한줄설치
+# docker 한줄설치
 
 ```
 wget https://gist.githubusercontent.com/msc9533/1e2bf4c5acbe60a89726f7a2d3a77f6f/raw/a4aac3c007464c726401ff609fe7034c2ff85250/nipa_docker_install.sh && sudo chmod +x nipa_docker_install.sh && ./nipa_docker_install.sh
@@ -27,6 +27,12 @@ sudo reboot
 * (수정 2020.12.16.)  
 
 현재 2020년 NIPA가 종료예정입니다. 2021년 업데이트 이후 업데이트 예정입니다.
+
+
+update - (2022.05.20.)
+```
+wget https://gist.githubusercontent.com/seungchan-mok/624dabd502e02bffd9085e40fd22d8a0/raw/52d43863a4c80165a0300738bb7ea470944c2e89/docker_install.sh && sh docker_install.sh
+```
 
 ---
 
